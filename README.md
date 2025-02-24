@@ -1,2 +1,2 @@
 # Maria-s-World
-A simplified version of Super Mario Maker
+It´s my final degree project for Computer Engineering at the University of Málaga (UMA). It is a simplified version of Super Mario Maker.
