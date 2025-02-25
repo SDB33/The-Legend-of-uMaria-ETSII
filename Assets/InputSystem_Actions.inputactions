@@ -522,46 +522,48 @@
             "id": "b54be9ff-d0c8-4a80-a7b6-daa064f5fafd",
             "actions": [
                 {
-                    "name": "clic esquerre",
-                    "type": "Button",
-                    "id": "41b1cf0c-3b55-4bf7-bfef-3d35672b29e3",
-                    "expectedControlType": "",
+                    "name": "alterar",
+                    "type": "Value",
+                    "id": "97acdcdf-bf9c-4a1d-9612-9c1d1bf2de8e",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "clic dret",
-                    "type": "Button",
-                    "id": "b7ac0eef-dfd9-48f2-b164-d64ded13aabc",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "8299b422-89fa-4dd4-8d74-b2e0296c3674",
+                    "name": "1D Axis",
+                    "id": "d5e57705-c978-4c92-a775-96828e47c832",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "alterar",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "15a33915-49d5-49e2-ab5e-31f6a0862eb5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "clic esquerre",
+                    "action": "alterar",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "3b4efc90-70d0-4a78-b9cb-eb65b0eb9048",
+                    "name": "negative",
+                    "id": "194718f3-96a8-4846-8bfb-9278d5019292",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "clic dret",
+                    "action": "alterar",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }

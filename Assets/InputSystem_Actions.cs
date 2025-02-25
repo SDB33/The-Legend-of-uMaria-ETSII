@@ -608,46 +608,48 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""id"": ""b54be9ff-d0c8-4a80-a7b6-daa064f5fafd"",
             ""actions"": [
                 {
-                    ""name"": ""clic esquerre"",
-                    ""type"": ""Button"",
-                    ""id"": ""41b1cf0c-3b55-4bf7-bfef-3d35672b29e3"",
-                    ""expectedControlType"": """",
+                    ""name"": ""alterar"",
+                    ""type"": ""Value"",
+                    ""id"": ""97acdcdf-bf9c-4a1d-9612-9c1d1bf2de8e"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""clic dret"",
-                    ""type"": ""Button"",
-                    ""id"": ""b7ac0eef-dfd9-48f2-b164-d64ded13aabc"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""8299b422-89fa-4dd4-8d74-b2e0296c3674"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""d5e57705-c978-4c92-a775-96828e47c832"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""alterar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""15a33915-49d5-49e2-ab5e-31f6a0862eb5"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""clic esquerre"",
+                    ""action"": ""alterar"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""3b4efc90-70d0-4a78-b9cb-eb65b0eb9048"",
+                    ""name"": ""negative"",
+                    ""id"": ""194718f3-96a8-4846-8bfb-9278d5019292"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""clic dret"",
+                    ""action"": ""alterar"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -729,8 +731,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         // Prometeu
         m_Prometeu = asset.FindActionMap("Prometeu", throwIfNotFound: true);
-        m_Prometeu_clicesquerre = m_Prometeu.FindAction("clic esquerre", throwIfNotFound: true);
-        m_Prometeu_clicdret = m_Prometeu.FindAction("clic dret", throwIfNotFound: true);
+        m_Prometeu_alterar = m_Prometeu.FindAction("alterar", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1007,8 +1008,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     // Prometeu
     private readonly InputActionMap m_Prometeu;
     private List<IPrometeuActions> m_PrometeuActionsCallbackInterfaces = new List<IPrometeuActions>();
-    private readonly InputAction m_Prometeu_clicesquerre;
-    private readonly InputAction m_Prometeu_clicdret;
+    private readonly InputAction m_Prometeu_alterar;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
     /// </summary>
@@ -1021,13 +1021,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public PrometeuActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/clicesquerre".
+        /// Provides access to the underlying input action "Prometeu/alterar".
         /// </summary>
-        public InputAction @clicesquerre => m_Wrapper.m_Prometeu_clicesquerre;
-        /// <summary>
-        /// Provides access to the underlying input action "Prometeu/clicdret".
-        /// </summary>
-        public InputAction @clicdret => m_Wrapper.m_Prometeu_clicdret;
+        public InputAction @alterar => m_Wrapper.m_Prometeu_alterar;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1054,12 +1050,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PrometeuActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PrometeuActionsCallbackInterfaces.Add(instance);
-            @clicesquerre.started += instance.OnClicesquerre;
-            @clicesquerre.performed += instance.OnClicesquerre;
-            @clicesquerre.canceled += instance.OnClicesquerre;
-            @clicdret.started += instance.OnClicdret;
-            @clicdret.performed += instance.OnClicdret;
-            @clicdret.canceled += instance.OnClicdret;
+            @alterar.started += instance.OnAlterar;
+            @alterar.performed += instance.OnAlterar;
+            @alterar.canceled += instance.OnAlterar;
         }
 
         /// <summary>
@@ -1071,12 +1064,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="PrometeuActions" />
         private void UnregisterCallbacks(IPrometeuActions instance)
         {
-            @clicesquerre.started -= instance.OnClicesquerre;
-            @clicesquerre.performed -= instance.OnClicesquerre;
-            @clicesquerre.canceled -= instance.OnClicesquerre;
-            @clicdret.started -= instance.OnClicdret;
-            @clicdret.performed -= instance.OnClicdret;
-            @clicdret.canceled -= instance.OnClicdret;
+            @alterar.started -= instance.OnAlterar;
+            @alterar.performed -= instance.OnAlterar;
+            @alterar.canceled -= instance.OnAlterar;
         }
 
         /// <summary>
@@ -1261,18 +1251,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface IPrometeuActions
     {
         /// <summary>
-        /// Method invoked when associated input action "clic esquerre" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "alterar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnClicesquerre(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "clic dret" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnClicdret(InputAction.CallbackContext context);
+        void OnAlterar(InputAction.CallbackContext context);
     }
 }

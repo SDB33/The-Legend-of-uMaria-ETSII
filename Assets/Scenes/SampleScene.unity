@@ -719,7 +719,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: Concebre
+        m_MethodName: Alteracio
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -729,24 +729,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 41b1cf0c-3b55-4bf7-bfef-3d35672b29e3
-    m_ActionName: 'Prometeu/clic esquerre[/Mouse/leftButton]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 519420034}
-        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: Desfer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b7ac0eef-dfd9-48f2-b164-d64ded13aabc
-    m_ActionName: 'Prometeu/clic dret[/Mouse/rightButton]'
+    m_ActionId: 97acdcdf-bf9c-4a1d-9612-9c1d1bf2de8e
+    m_ActionName: 'Prometeu/alterar[/Mouse/leftButton,/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI

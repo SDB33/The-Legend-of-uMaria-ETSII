@@ -5,22 +5,22 @@ public class ModeDeu : MonoBehaviour {
 
     public IRemovible bestiesa;
 
+    private float alteracio;
 
-
-    public void Concebre(InputAction.CallbackContext accio) {
-        if (!accio.performed) {return;}
+    void Update() {
         if (bestiesa==null) {return;}
-        Debug.Log("a la Laura li agrada sonic");
-        bestiesa.Concebre();
-        
+        if      (alteracio ==  1) { 
+
+
+            bestiesa.Concebre(); 
+
+            
+        }
+        else if (alteracio == -1) { bestiesa.Desfer();   }
 
     }
 
-    public void Desfer(InputAction.CallbackContext accio) {
-        if (!accio.performed) {return;}
-        if (bestiesa==null) {return;}
-        Debug.Log("a la Carla li agrada Tami");
-        bestiesa.Desfer();
+    public void Alteracio(InputAction.CallbackContext valor) { alteracio = valor.ReadValue<float>(); }
 
-    }
+
 }
