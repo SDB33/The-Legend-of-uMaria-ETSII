@@ -3,29 +3,16 @@ using UnityEngine.Tilemaps;
 
 public class Entorn : Contenidor {
 
-    public Tilemap Terra;
-    public Tilemap Paret;
-    public Tile Zigot;
-    public bool EsPasejable;
+    public GameObject mao;
 
     public ModeDeu bestiesa;
 
 
-    public override void Concebre(){
-        if (EsPasejable) {
-            Terra.SetTile(Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition)) ,Zigot);
-            Paret.SetTile(Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition)) ,null);
-        }
-        else {
-            Terra.SetTile(Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition)) ,null);
-            Paret.SetTile(Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition)) ,Zigot);          
-        }
+    public override void Concebre(){ 
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Instantiate(mao,  new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f )    , Quaternion.identity); 
     }
 
-    public override void Desfer(){
-        Terra.SetTile(Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition)) ,null);
-        Paret.SetTile(Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition)) ,null);
-    }
 
     public void PremerBoto() { bestiesa.bestiesa=this; }
 
