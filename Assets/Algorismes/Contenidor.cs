@@ -4,7 +4,7 @@ public interface IRemovible {
     void Concebre(); 
 }
 
-public class Contenidor : MonoBehaviour, IRemovible {
+public class Abstraccio : MonoBehaviour, IRemovible {
 
     public Sprite follet;
     public int restants;

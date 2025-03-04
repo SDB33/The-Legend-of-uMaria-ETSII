@@ -17,7 +17,7 @@ public class ModeDeu : MonoBehaviour {
 
     // Si al final lo hago con tilemap, se puede ver si el ratón está tocando un objeto y, si no, que mire el tilemap y para mover piezas del tilemap, se podría habilitar un gameobject que es el que realmente
     // se movera y donde se ponga se destruye el tile anterior para poner el nuevo
-    void Start() { Application.targetFrameRate = 60;} // borrar esto
+    void Start() { Application.targetFrameRate = 60; } // borrar esto
 
 
     void Update() {
@@ -32,7 +32,7 @@ public class ModeDeu : MonoBehaviour {
 
     private void Organitzar() {
         cop = Physics2D.GetRayIntersection( Camera.main.ScreenPointToRay(Input.mousePosition) );
-        if (cop.collider==null) { if (bestiesa==null) {return;} bestiesa.Concebre(); sonDiferents=true; }
+        if (cop.collider==null) { sonDiferents=true; temps=Time.time+3f; if (bestiesa==null) {return;} bestiesa.Concebre();  }
         else {
             if (sonDiferents) {return;}
             avaluador=cop.collider.gameObject;

@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class Entorn : Contenidor {
+public class Entorn : Abstraccio {
 
     public GameObject mao;
 
