@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class GSTRodanxes : MonoBehaviour {
 
     public HorizontalLayoutGroup botifler;
-    public RectTransform paco;
+    public RectTransform contenidor;
     public RectTransform tamanoIndividual;
 
     void Start() {
@@ -12,7 +12,7 @@ public class GSTRodanxes : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log( (paco.sizeDelta.x/2 - paco.localPosition.x) / (tamanoIndividual.sizeDelta.x + botifler.spacing) ); 
+        Debug.Log( (contenidor.sizeDelta.x/2 - contenidor.localPosition.x) / (tamanoIndividual.sizeDelta.x + botifler.spacing) ); 
         
     }
 }
