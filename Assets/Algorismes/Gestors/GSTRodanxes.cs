@@ -19,46 +19,46 @@ public class GSTRodanxes : MonoBehaviour {
     public int divisor;
 
     void Start() {
+        for (int i=0; i<noms.Length;i++) { categoritzar(i); }
+                 
+    }
 
-        Sprite[] peces = Resources.LoadAll<Sprite>("Terreny");
-        GameObject cercle = Instantiate(sector, Vector3.zero, Quaternion.identity, botifler.transform);
-        cercle.transform.localScale = new Vector3(3f,3f,0f);
-        cercle.GetComponent<Image>().sprite=chisma;
-        cercle.GetComponent<Image>().color=Color.cyan;
-        cercle.transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.5f,0.5f,0f);
 
-        int sobrante = peces.Length;
-        int inicio = 0;
-        int fin = sobrante>divisor ? divisor:sobrante;
+    private void categoritzar(int vaig) {
+        Sprite[] peces = Resources.LoadAll<Sprite>(noms[vaig]); // aixo no s'hauria de fer aixi a causa de "ARBITRARY CODE EXECUTION"
 
-        for (int i=inicio; i<fin; i++) {
+        int inici = 0;
+        int fi = divisor<peces.Length ? divisor-1:peces.Length;
+
+        while (inici<fi) {
+
+            GameObject mare = Instantiate(new GameObject("mare", typeof(RectTransform)), Vector3.zero, Quaternion.identity, botifler.transform);
             
-            Debug.Log(fin);
-            GameObject paco = Instantiate(sector, Vector3.zero, Quaternion.identity, cercle.transform);
+            for (int i=inici; i<fi; i++) {
+                GameObject filla = Instantiate(sector, Vector3.zero, Quaternion.identity, mare.transform);
+                individu = filla.GetComponent<RectTransform>();
+                filla.transform.localScale = new Vector3(5f,5f,0f);
+                filla.transform.Rotate(0f, 0.0f, (360f/(fi-inici))*(i-inici), Space.Self);
+                filla.GetComponent<Image>().fillAmount= 1f/(fi-inici);
+                filla.GetComponent<Image>().sprite=chisma; 
+                filla.GetComponent<Image>().color=colors[vaig];
+                filla.GetComponent<Image>().alphaHitTestMinimumThreshold=0.1f;
+                filla.transform.GetChild(0).gameObject.GetComponent<Image>().sprite=peces[i];
+                filla.transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.2f,0.2f,0f);
+                filla.transform.GetChild(0).gameObject.transform.localPosition = new Vector3(-17.47f,-24.41f,0f); // esto no es valido, ponerlo en el centro
+                filla.transform.GetChild(0).gameObject.transform.Rotate(0f, 0.0f, -(360f/(fi-inici))*(i-inici), Space.Self);
+            }
+            
+            GameObject cercle = Instantiate(sector, Vector3.zero, Quaternion.identity, mare.transform);
+            cercle.transform.localScale = new Vector3(1f,1f,0f);
+            cercle.GetComponent<Image>().sprite=chisma;
+            cercle.GetComponent<Image>().color=colors[vaig];
+            cercle.transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.5f,0.5f,0f);
 
-            paco.GetComponent<Image>().fillAmount= 1f/fin  ;
-
-
-
-            paco.transform.localScale = new Vector3(2f,2f,0f);
-            paco.transform.Rotate(0f, 0.0f, (360f/fin)*i, Space.Self);
-            paco.GetComponent<Image>().sprite=chisma;
-            paco.GetComponent<Image>().color=Color.cyan;
-            paco.GetComponent<Image>().alphaHitTestMinimumThreshold=0.1f;
-            paco.transform.GetChild(0).gameObject.GetComponent<Image>().sprite=peces[i];
-            paco.transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.2f,0.2f,0f);
-            paco.transform.GetChild(0).gameObject.transform.localPosition = new Vector3(-17.47f,-24.41f,0f);
-            paco.transform.GetChild(0).gameObject.transform.Rotate(0f, 0.0f, -(360f/fin)*i, Space.Self);
+            inici+=divisor;
+            fi = divisor<peces.Length-inici ? inici+divisor-1:peces.Length;
 
         }
-
-        
-
-        //while (sobrante>divisor) {
-
-        //}
-
-        
     }
 
 
@@ -67,6 +67,7 @@ public class GSTRodanxes : MonoBehaviour {
     void Update() {
         index = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing);
 
+        Debug.Log(index);
 
         if (Input.GetMouseButton(0)) { return; }
 
