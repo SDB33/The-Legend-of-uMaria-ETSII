@@ -25,14 +25,16 @@ public class GSTRodanxes : MonoBehaviour {
 
 
     private void categoritzar(int vaig) {
-        Sprite[] peces = Resources.LoadAll<Sprite>(noms[vaig]); // aixo no s'hauria de fer aixi a causa de "ARBITRARY CODE EXECUTION"
+        Sprite[] peces = Resources.LoadAll<Sprite>(noms[vaig]); 
 
         int inici = 0;
         int fi = divisor<peces.Length ? divisor-1:peces.Length;
 
         while (inici<fi) {
 
-            GameObject mare = Instantiate(new GameObject("mare", typeof(RectTransform)), Vector3.zero, Quaternion.identity, botifler.transform);
+            GameObject mare = new GameObject("mare", typeof(RectTransform));
+            mare.transform.SetParent(botifler.transform);
+            mare.transform.localScale = new Vector3(1f, 1f, 1f);
             
             for (int i=inici; i<fi; i++) {
                 GameObject filla = Instantiate(sector, Vector3.zero, Quaternion.identity, mare.transform);
@@ -45,7 +47,7 @@ public class GSTRodanxes : MonoBehaviour {
                 filla.GetComponent<Image>().alphaHitTestMinimumThreshold=0.1f;
                 filla.transform.GetChild(0).gameObject.GetComponent<Image>().sprite=peces[i];
                 filla.transform.GetChild(0).gameObject.transform.localScale = new Vector3(0.2f,0.2f,0f);
-                filla.transform.GetChild(0).gameObject.transform.localPosition = new Vector3(-17.47f,-24.41f,0f); // esto no es valido, ponerlo en el centro
+                filla.transform.GetChild(0).gameObject.transform.localPosition = new Vector3(35f*Mathf.Cos((Mathf.PI)/(fi-inici)), 35f*Mathf.Sin((Mathf.PI)/(fi-inici)),0f); 
                 filla.transform.GetChild(0).gameObject.transform.Rotate(0f, 0.0f, -(360f/(fi-inici))*(i-inici), Space.Self);
             }
             
@@ -62,19 +64,31 @@ public class GSTRodanxes : MonoBehaviour {
     }
 
 
-    // Quitar input.GetMouseButton y poner el new input system
+
+
+
 
     void Update() {
+
+    }
+
+    // Quitar input.GetMouseButton y poner el new input system
+    public void mogudet() {
         index = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing);
 
         Debug.Log(index);
 
-        if (Input.GetMouseButton(0)) { return; }
-
-         contenidor.localPosition =  new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ( (individu.sizeDelta.x + botifler.spacing) * Mathf.Round(index) - contenidor.sizeDelta.x/2 ), forca * Time.deltaTime),
+         contenidor.localPosition =  new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ((individu.sizeDelta.x + botifler.spacing) * Mathf.Round(index) - contenidor.sizeDelta.x/2), 
+                                                                    Input.GetMouseButton(0) ? 0.1f * Time.deltaTime :  forca * Time.deltaTime),
                                                   contenidor.localPosition.y,
-                                                  contenidor.localPosition.z);  
-        
-    }
+                                                  contenidor.localPosition.z); 
+
+
+    } 
+
+
 }
+
+
+
 

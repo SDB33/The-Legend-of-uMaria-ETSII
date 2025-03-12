@@ -51,3 +51,7 @@ public class ModeDeu : MonoBehaviour {
     public void Alteracio(InputAction.CallbackContext valor) { alteracio = valor.ReadValue<float>(); sonDiferents=false; temps=Time.time+3f; mateix=null; }
 
 }
+
+
+//        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+//        Instantiate(mao,  new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f )    , Quaternion.identity);
