@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class ModeDeu : MonoBehaviour {
 
@@ -15,6 +16,9 @@ public class ModeDeu : MonoBehaviour {
     private float temps;
 
 
+    public GameObject objecte;
+
+
     // Si al final lo hago con tilemap, se puede ver si el ratón está tocando un objeto y, si no, que mire el tilemap y para mover piezas del tilemap, se podría habilitar un gameobject que es el que realmente
     // se movera y donde se ponga se destruye el tile anterior para poner el nuevo
     void Start() { Application.targetFrameRate = 60; } // borrar esto
@@ -22,33 +26,28 @@ public class ModeDeu : MonoBehaviour {
 
     void Update() {
          
-        if      (alteracio ==  1) { Organitzar(); }
+        if (alteracio ==  1) {  
+            cop = Physics2D.GetRayIntersection( Camera.main.ScreenPointToRay(Input.mousePosition) );
+            if (cop.collider!=null || objecte==null ) { return; }
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Instantiate(objecte,  new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f )    , Quaternion.identity);
+        }
         else if (alteracio == -1) {
             cop = Physics2D.GetRayIntersection( Camera.main.ScreenPointToRay(Input.mousePosition) );
-            if (cop.collider!=null) { Destroy(cop.collider.gameObject); }
+            if (cop.collider==null) { return; }
+            Destroy(cop.collider.gameObject);
         }
-
     }
 
-    private void Organitzar() {
-        cop = Physics2D.GetRayIntersection( Camera.main.ScreenPointToRay(Input.mousePosition) );
-        if (cop.collider==null) { sonDiferents=true; temps=Time.time+3f; if (bestiesa==null) {return;} bestiesa.Concebre();  }
-        else {
-            if (sonDiferents) {return;}
-            avaluador=cop.collider.gameObject;
-            if (mateix==null) {mateix=cop.collider.gameObject;}
-            if (mateix==avaluador) {
-                if (Time.time>temps) { cop.collider.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan; }
-
-            }
-            else { sonDiferents=true; }
-
-
-        }
-        
+     public void esquerra(InputAction.CallbackContext canvi) {
+        if (canvi.performed) {alteracio+=1;}
+        else if (canvi.canceled) {alteracio-=1;} 
     }
 
-    public void Alteracio(InputAction.CallbackContext valor) { alteracio = valor.ReadValue<float>(); sonDiferents=false; temps=Time.time+3f; mateix=null; }
+    public void dreta(InputAction.CallbackContext canvi) { 
+        if (canvi.performed) {alteracio-=1;}
+        else if (canvi.canceled) {alteracio+=1;} 
+    }
 
 }
 
