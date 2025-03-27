@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8762574462659852108}
   - component: {fileID: 8898011139900057479}
-  - component: {fileID: 1143032004440672750}
+  - component: {fileID: 2783071399462696279}
   - component: {fileID: 806866897491356083}
   m_Layer: 5
   m_Name: Abstraccio
@@ -48,7 +48,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4543587009703163369}
   m_CullTransparentMesh: 1
---- !u!114 &1143032004440672750
+--- !u!114 &2783071399462696279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4543587009703163369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 878cdfd5ada57544c9d460fb1c1fa303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

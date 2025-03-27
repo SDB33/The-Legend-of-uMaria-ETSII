@@ -11,7 +11,8 @@ public class GSTRodanxes : MonoBehaviour {
     public RectTransform contenidor;
     public RectTransform individu;
 
-    private float index;
+    public  float OnSoc;
+    public  float OnVaig;
     public  float forca;
 
     public GameObject sector;
@@ -30,6 +31,8 @@ public class GSTRodanxes : MonoBehaviour {
 
     public HorizontalLayoutGroup palet;
 
+    private GameObject[] mares;
+
     void Start() {
         Magatzem = new Dictionary<string, GameObject>();
         rapida = new GameObject[12];
@@ -39,10 +42,20 @@ public class GSTRodanxes : MonoBehaviour {
             rapida[i].SetActive(false);
         }
 
-        for (int i=0; i<noms.Length;i++) { categoritzar(i); }
-                 
-    }
+        mares = new GameObject[50]; //hay que ponerle un limite
+        
 
+        for (int i=0; i<noms.Length;i++) { categoritzar(i); }
+
+        mogudet();
+        OnSoc = 3;
+        OnVaig = 3;
+        mares[3].transform.localScale = new Vector3(1f,1f,0f);
+        BotoSelecArross.cap=this;
+        MouSenseUI.cap=this;
+        for (int j = 0; j < mares[3].transform.childCount-1; j++) { mares[3].transform.GetChild(j).GetComponent<Button>().interactable=true; } 
+           
+    }
 
     private void categoritzar(int vaig) {
         GameObject[] peces = Resources.LoadAll<GameObject>(noms[vaig]); 
@@ -55,6 +68,8 @@ public class GSTRodanxes : MonoBehaviour {
             GameObject mare = new GameObject("mare", typeof(RectTransform));
             mare.transform.SetParent(botifler.transform);
             mare.transform.localScale = new Vector3(1f, 1f, 1f);
+            mares[Mathf.RoundToInt(OnSoc)]= mare;
+            OnSoc++;
             
             for (int i=inici; i<fi; i++) {
                 GameObject filla = Instantiate(sector, Vector3.zero, Quaternion.identity, mare.transform);
@@ -86,38 +101,49 @@ public class GSTRodanxes : MonoBehaviour {
         }
     }
 
-
-
-
-
-
     void Update() {}
 
-    // Quitar input.GetMouseButton y poner el new input system
+    public void ActUbi() {
+        OnSoc = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing);
+    }
+
     public void mogudet() {
-        index = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing);
+        ActUbi();
+ 
+        int i = 0;
+        while (mares[i]!=null && i<mares.Length) {
+            if (i!=Mathf.RoundToInt(OnSoc)) {
+                mares[i].transform.localScale = new Vector3(0.7f,0.7f,0f); 
+                for (int j = 0; j < mares[i].transform.childCount-1; j++) { mares[i].transform.GetChild(j).GetComponent<Button>().interactable=false; }
+            }
+            else {
+                mares[i].transform.localScale = new Vector3(1f,1f,0f);
+                for (int j = 0; j < mares[i].transform.childCount-1; j++) { mares[i].transform.GetChild(j).GetComponent<Button>().interactable=true; }
+            }
+            i++;
+        }
 
-        Debug.Log(index);
-
-         contenidor.localPosition =  new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ((individu.sizeDelta.x + botifler.spacing) * Mathf.Round(index) - contenidor.sizeDelta.x/2), 
-                                                                    Input.GetMouseButton(0) ? 0.1f * Time.deltaTime :  forca * Time.deltaTime),
+         contenidor.localPosition =  new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ((individu.sizeDelta.x + botifler.spacing) * Mathf.Round(OnVaig) - contenidor.sizeDelta.x/2), forca * Time.deltaTime),
                                                   contenidor.localPosition.y,
                                                   contenidor.localPosition.z); 
 
 
     } 
 
-    public void esquerra(InputAction.CallbackContext canvi) { 
-        if (canvi.canceled) {
-            if (EventSystem.current.currentSelectedGameObject!=null) {
-                Magatzem.TryGetValue(EventSystem.current.currentSelectedGameObject.name, out Thopasso.objecte);
-                afegirRapida();
-            }
-        } 
+    public void esquerra() { 
+        GameObject futil;
+        Magatzem.TryGetValue(mares[Mathf.RoundToInt(OnSoc)].transform.GetChild(mares[Mathf.RoundToInt(OnSoc)].transform.childCount-1).name, out futil);
+        if (futil==null) {return;}
+        Thopasso.objecte = futil;
+        afegirRapida();
     }
 
     // Esto se debe hacer con una corrutina, en vez de usar currentSelectedGameObject, cuando este implementado esto de solo poder clickar en el circulo disponible, hacerlo con la referencia al circulo
     private void afegirRapida() { // esto se debería hacer con una corrutina
+        Transform aux = mares[Mathf.RoundToInt(OnSoc)].transform.GetChild(mares[Mathf.RoundToInt(OnSoc)].transform.childCount-1);
+        for (int i=0; i<rapida.Length; i++) {
+            if (rapida[i].name==aux.name) {return;}
+        }
         for (int i=rapida.Length-1; i>0; i--) {
             rapida[i].SetActive(rapida[i-1].activeSelf);
             rapida[i].name=rapida[i-1].name;
@@ -125,15 +151,15 @@ public class GSTRodanxes : MonoBehaviour {
             rapida[i].transform.GetChild(1).gameObject.GetComponent<Image>().color=rapida[i-1].transform.GetChild(1).gameObject.GetComponent<Image>().color;
         }
         rapida[0].SetActive(true);
-        rapida[0].name = EventSystem.current.currentSelectedGameObject.name;
-        rapida[0].transform.GetChild(0).gameObject.GetComponent<Image>().sprite=EventSystem.current.currentSelectedGameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite;
-        rapida[0].transform.GetChild(1).gameObject.GetComponent<Image>().color=EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
+        rapida[0].name = aux.name;
+        rapida[0].transform.GetChild(0).gameObject.GetComponent<Image>().sprite=aux.transform.GetChild(0).gameObject.GetComponent<Image>().sprite;
+        rapida[0].transform.GetChild(1).gameObject.GetComponent<Image>().color=aux.GetComponent<Image>().color;
+    }
+
+    public void BotoTancar() {
+
+
     }
 
 
-
 }
-
-
-
-
