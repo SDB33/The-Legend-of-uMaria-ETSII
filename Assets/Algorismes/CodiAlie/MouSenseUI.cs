@@ -2,50 +2,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using System.Collections;
 
 public class MouSenseUI : ScrollRect { 
 
     public static GSTRodanxes cap;
-    private bool esClica;
-    private bool esCanviant; 
+    private bool esClica; 
 
     public override void OnBeginDrag(PointerEventData dades) { 
         if (dades.pointerPress!=null) { return; }
-
         esClica=false; 
         base.OnBeginDrag(dades); 
     } 
 
     public override void OnDrag(PointerEventData dades) {
-        if (esCanviant) {
+        if (cap.esCanviant) {
             dades.position = Input.mousePosition;
             dades.button = PointerEventData.InputButton.Left;
             base.OnBeginDrag(dades);
         }
-
         base.OnDrag(dades);
-        if (esCanviant) {return;}
+        if (cap.esCanviant) {return;}
         cap.ActUbi();
-        if (cap.OnSoc-cap.OnVaig> 0.5f) { StartCoroutine(EnCanviarValor(1f)); }
-        if (cap.OnSoc-cap.OnVaig<-0.5f) { StartCoroutine(EnCanviarValor(-1f)); }
+        if (Mathf.Abs(cap.OnSoc - cap.OnVaig) > 0.2f) { 
+            cap.OnVaig += Mathf.Sign(cap.OnSoc - cap.OnVaig);
+            StartCoroutine(cap.EnCanviarValor());    
+        }
     }
     
     public override void OnEndDrag  (PointerEventData dades) { 
         base.OnEndDrag(dades); 
-         if (esCanviant) {return;} StartCoroutine(EnCanviarValor(0f));
+         if (cap.esCanviant) {return;} StartCoroutine(cap.EnCanviarValor());
     }
-
-    private IEnumerator EnCanviarValor(float pos)  {
-        esCanviant=true;
-        cap.OnVaig= cap.OnVaig + pos ;
-        while (Mathf.Abs(cap.OnSoc-cap.OnVaig) > 0.001f) {
-            cap.mogudet();
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-        esCanviant=false;
-    }
-
 
     public override void OnInitializePotentialDrag(PointerEventData dades) { 
         if (dades.pointerPress==null) { esClica=true; }
@@ -55,10 +42,9 @@ public class MouSenseUI : ScrollRect {
     public void deixarClic (InputAction.CallbackContext canvi) { 
         if (!canvi.canceled || !esClica) {return;}
         esClica=false;
-        if (esCanviant) {return;} 
-        StartCoroutine(EnCanviarValor(Input.mousePosition.x >  Screen.width/2f ? 1f : -1f));           
+        if (cap.esCanviant) {return;} 
+        cap.OnVaig+=Input.mousePosition.x >  Screen.width/2f ? 1f : -1f;
+        StartCoroutine(cap.EnCanviarValor());            
     }
     
 }
-
-
