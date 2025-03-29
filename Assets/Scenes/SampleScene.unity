@@ -229,8 +229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 405}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.0066833, y: 405}
+  m_SizeDelta: {x: 1920.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &164808345
 CanvasRenderer:
@@ -673,6 +673,7 @@ MonoBehaviour:
   palet: {fileID: 1743693984}
   saltadorMare: {fileID: 164808343}
   saltadorPrefab: {fileID: 4831278199441272610, guid: 9699bb03011c3f3498a3e000bd1c6b46, type: 3}
+  esCanviant: 0
 --- !u!114 &381311760
 MonoBehaviour:
   m_ObjectHideFlags: 0

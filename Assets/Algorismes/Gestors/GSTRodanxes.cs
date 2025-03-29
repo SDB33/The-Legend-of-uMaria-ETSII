@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -5,7 +6,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using System.Collections;
 using TMPro;
-
 
 public class GSTRodanxes : MonoBehaviour {
 
@@ -37,7 +37,7 @@ public class GSTRodanxes : MonoBehaviour {
 
     private GameObject[] mares;
 
-    public GameObject saltadorMare;
+    public HorizontalLayoutGroup saltadorMare;
     public GameObject saltadorPrefab;
 
     public bool esCanviant;
@@ -126,22 +126,20 @@ public class GSTRodanxes : MonoBehaviour {
     public IEnumerator EnCanviarValor()  {
         esCanviant=true;
 
+        float signe = Mathf.Sign(OnVaig - OnSoc);
+
         while (Mathf.Abs(OnSoc-OnVaig) > 0.001f) {
             ActUbi();
-            int i = 0;
-            while (mares[i]!=null && i<mares.Length) {
-                if (i!=Mathf.RoundToInt(OnSoc)) {
-                    mares[i].transform.localScale = Vector3.MoveTowards(mares[i].transform.localScale,new Vector3(0.7f,0.7f,0f), forca * Time.deltaTime); 
-                    for (int j = 0; j < mares[i].transform.childCount-1; j++) { mares[i].transform.GetChild(j).GetComponent<Button>().interactable=false; }
-                }
-                else {
-                    mares[i].transform.localScale = Vector3.MoveTowards(mares[i].transform.localScale,new Vector3(1.5f,1.5f,0f), forca * Time.deltaTime); 
-                    for (int j = 0; j < mares[i].transform.childCount-1; j++) { mares[i].transform.GetChild(j).GetComponent<Button>().interactable=true; }
-                }
-                i++;
-            }
 
-            contenidor.localPosition=new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ((individu.sizeDelta.x + botifler.spacing) * Mathf.Round(OnVaig) - contenidor.sizeDelta.x/2), forca * Time.deltaTime),
+            if (Mathf.RoundToInt(OnSoc-signe)>=0 && Mathf.RoundToInt(OnSoc-signe)<=7) { //Solucion temporal que tengo que quitar.
+            mares[Mathf.RoundToInt(OnSoc-signe)].transform.localScale = Vector3.MoveTowards(mares[Mathf.RoundToInt(OnSoc-signe)].transform.localScale,new Vector3(0.7f,0.7f,0f), forca * Time.deltaTime); 
+            for (int j = 0; j < mares[Mathf.RoundToInt(OnSoc-signe)].transform.childCount-1; j++) { mares[Mathf.RoundToInt(OnSoc-signe)].transform.GetChild(j).GetComponent<Button>().interactable=false; }
+
+            }
+            mares[Mathf.RoundToInt(OnSoc)].transform.localScale = Vector3.MoveTowards(mares[Mathf.RoundToInt(OnSoc)].transform.localScale,new Vector3(1.3f,1.3f,0f), forca * Time.deltaTime); 
+            for (int j = 0; j < mares[Mathf.RoundToInt(OnSoc)].transform.childCount-1; j++) { mares[Mathf.RoundToInt(OnSoc)].transform.GetChild(j).GetComponent<Button>().interactable=true; }
+            
+            contenidor.localPosition =  new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ((individu.sizeDelta.x + botifler.spacing) * Mathf.Round(OnVaig) - contenidor.sizeDelta.x/2), forca * Time.deltaTime),
                                                                        contenidor.localPosition.y,
                                                                        contenidor.localPosition.z); 
 
@@ -160,8 +158,8 @@ public class GSTRodanxes : MonoBehaviour {
         afegirRapida();
     }
 
-    // Esto se debe hacer con una corrutina, en vez de usar currentSelectedGameObject, cuando este implementado esto de solo poder clickar en el circulo disponible, hacerlo con la referencia al circulo
-    private void afegirRapida() { // esto se debería hacer con una corrutina
+    // Esto se debe hacer con una corrutina,
+    private void afegirRapida() { 
         Transform aux = mares[Mathf.RoundToInt(OnSoc)].transform.GetChild(mares[Mathf.RoundToInt(OnSoc)].transform.childCount-1);
         for (int i=0; i<rapida.Length; i++) {
             if (rapida[i].name==aux.name) {return;}
