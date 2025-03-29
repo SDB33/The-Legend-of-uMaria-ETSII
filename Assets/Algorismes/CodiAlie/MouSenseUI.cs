@@ -28,6 +28,9 @@ public class MouSenseUI : ScrollRect {
             StartCoroutine(cap.EnCanviarValor());    
         }
     }
+
+    //if (Input.mousePosition.x<5f) {Mouse.current.WarpCursorPosition(new Vector2(Screen.width - 7f, Input.mousePosition.y)); }
+    //else if (Input.mousePosition.x>Screen.width - 6f) {Mouse.current.WarpCursorPosition(new Vector2(6f, Input.mousePosition.y));}
     
     public override void OnEndDrag  (PointerEventData dades) { 
         base.OnEndDrag(dades); 

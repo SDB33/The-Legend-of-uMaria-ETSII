@@ -54,9 +54,11 @@ public class GSTRodanxes : MonoBehaviour {
         }
 
         mares = new GameObject[50]; //hay que ponerle un limite
-        
+        for (int i=0; i<noms.Length;i++) { categoritzar(i); } 
+        GameObject[] efimer = new GameObject[Mathf.FloorToInt(OnSoc)];    
+        for (int i=0; i<efimer.Length;i++) { efimer[i] = mares[i]; }
+        mares = efimer;
 
-        for (int i=0; i<noms.Length;i++) { categoritzar(i); }
 
         contenidor.localPosition =  new Vector3 (322.137f, contenidor.localPosition.y, contenidor.localPosition.z); 
         OnSoc=3f;
@@ -119,9 +121,7 @@ public class GSTRodanxes : MonoBehaviour {
 
     void Update() {}
 
-    public void ActUbi() {
-        OnSoc = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing);
-    }
+    public void ActUbi() { OnSoc = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing); }
 
     public IEnumerator EnCanviarValor()  {
         esCanviant=true;
@@ -131,24 +131,35 @@ public class GSTRodanxes : MonoBehaviour {
         while (Mathf.Abs(OnSoc-OnVaig) > 0.001f) {
             ActUbi();
 
-            if (Mathf.RoundToInt(OnSoc-signe)>=0 && Mathf.RoundToInt(OnSoc-signe)<=7) { //Solucion temporal que tengo que quitar.
-            mares[Mathf.RoundToInt(OnSoc-signe)].transform.localScale = Vector3.MoveTowards(mares[Mathf.RoundToInt(OnSoc-signe)].transform.localScale,new Vector3(0.7f,0.7f,0f), forca * Time.deltaTime); 
-            for (int j = 0; j < mares[Mathf.RoundToInt(OnSoc-signe)].transform.childCount-1; j++) { mares[Mathf.RoundToInt(OnSoc-signe)].transform.GetChild(j).GetComponent<Button>().interactable=false; }
-
+            if (OnSoc<0) {
+                contenidor.localPosition = new Vector3 (-contenidor.sizeDelta.x/2f+200.01299999999f,contenidor.localPosition.y, contenidor.localPosition.z); 
+                OnSoc=mares.Length-1;
+                OnVaig=mares.Length-1;
             }
-            mares[Mathf.RoundToInt(OnSoc)].transform.localScale = Vector3.MoveTowards(mares[Mathf.RoundToInt(OnSoc)].transform.localScale,new Vector3(1.3f,1.3f,0f), forca * Time.deltaTime); 
-            for (int j = 0; j < mares[Mathf.RoundToInt(OnSoc)].transform.childCount-1; j++) { mares[Mathf.RoundToInt(OnSoc)].transform.GetChild(j).GetComponent<Button>().interactable=true; }
-            
+            else if (OnSoc>mares.Length-1) {
+                contenidor.localPosition = new Vector3 (contenidor.sizeDelta.x/2f,contenidor.localPosition.y, contenidor.localPosition.z); 
+                OnSoc=0;
+                OnVaig=0;
+            }
+
+            DeCopIVolta(Mathf.RoundToInt(OnSoc-signe),Mathf.RoundToInt(OnSoc));
             contenidor.localPosition =  new Vector3 (Mathf.MoveTowards(contenidor.localPosition.x, - ((individu.sizeDelta.x + botifler.spacing) * Mathf.Round(OnVaig) - contenidor.sizeDelta.x/2), forca * Time.deltaTime),
                                                                        contenidor.localPosition.y,
                                                                        contenidor.localPosition.z); 
 
             yield return new WaitForSeconds(Time.deltaTime);
         }
-        
         esCanviant=false;
     }
 
+    private void DeCopIVolta (int tancar, int obrir) {
+        if (tancar==-1) {tancar=mares.Length-1;}
+        else if (tancar==mares.Length) {tancar=0;}
+        mares[tancar].transform.localScale = Vector3.MoveTowards(mares[tancar].transform.localScale,new Vector3(0.7f,0.7f,0f), forca * Time.deltaTime); 
+        for (int j = 0; j < mares[tancar].transform.childCount-1; j++) { mares[tancar].transform.GetChild(j).GetComponent<Button>().interactable=false; }
+        mares[obrir].transform.localScale = Vector3.MoveTowards(mares[obrir].transform.localScale,new Vector3(1.3f,1.3f,0f), forca * Time.deltaTime); 
+        for (int j = 0; j < mares[obrir].transform.childCount-1; j++) { mares[obrir].transform.GetChild(j).GetComponent<Button>().interactable=true; }
+    }
 
     public void esquerra() { 
         GameObject futil;

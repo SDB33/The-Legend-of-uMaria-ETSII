@@ -655,7 +655,7 @@ MonoBehaviour:
   individu: {fileID: 0}
   OnSoc: 0
   OnVaig: 0
-  forca: 5000
+  forca: 10000
   sector: {fileID: 4543587009703163369, guid: 91d4a3ad59ceff148947b73c1dba6142, type: 3}
   chisma: {fileID: 21300000, guid: 726d0628be6d1a44ca393369a2ea702b, type: 3}
   noms:
@@ -671,7 +671,7 @@ MonoBehaviour:
   divisor: 6
   Thopasso: {fileID: 241503425}
   palet: {fileID: 1743693984}
-  saltadorMare: {fileID: 164808343}
+  saltadorMare: {fileID: 164808346}
   saltadorPrefab: {fileID: 4831278199441272610, guid: 9699bb03011c3f3498a3e000bd1c6b46, type: 3}
   esCanviant: 0
 --- !u!114 &381311760
@@ -1524,7 +1524,7 @@ MonoBehaviour:
   m_Content: {fileID: 381311756}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 2
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 0
   m_DecelerationRate: 0.135
