@@ -59,8 +59,7 @@ public class GSTRodanxes : MonoBehaviour {
         for (int i=0; i<efimer.Length;i++) { efimer[i] = mares[i]; }
         mares = efimer;
 
-
-        contenidor.localPosition =  new Vector3 (322.137f, contenidor.localPosition.y, contenidor.localPosition.z); 
+        contenidor.localPosition =  new Vector3 (1611.617f, contenidor.localPosition.y, contenidor.localPosition.z); 
         OnSoc=3f;
         OnVaig=3f;
         mares[3].transform.localScale = new Vector3(1.5f,1.5f,0f);
@@ -72,8 +71,8 @@ public class GSTRodanxes : MonoBehaviour {
 
         GameObject saltador = Instantiate(saltadorPrefab, Vector3.zero, Quaternion.identity, saltadorMare.transform);
         saltador.GetComponent<Image>().color=colors[vaig];
-        saltador.transform.GetChild(1).gameObject.GetComponent<Image>().sprite=follets[vaig];
-        saltador.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text=noms[vaig];
+        saltador.transform.GetChild(0).gameObject.GetComponent<Image>().sprite=follets[vaig];
+        saltador.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text=noms[vaig];
         saltador.GetComponent<Button>().onClick.AddListener(() => botar(saltador));
         posicio[vaig] = Mathf.FloorToInt(OnSoc);
 
@@ -81,6 +80,16 @@ public class GSTRodanxes : MonoBehaviour {
         int fi = divisor<peces.Length ? divisor:peces.Length;
 
         while (inici<fi) {
+
+            GameObject PetitSaltador = Instantiate(saltadorPrefab, Vector3.zero, Quaternion.identity, saltador.transform);
+            PetitSaltador.GetComponent<Image>().color=colors[vaig];
+            PetitSaltador.transform.localScale = new Vector3 (0.4f,0.4f,0f);
+            PetitSaltador.transform.localPosition += new Vector3(inici*8f-80f,-80f,0f);
+            Destroy(PetitSaltador.transform.GetChild(0).gameObject);
+            Destroy(PetitSaltador.transform.GetChild(1).gameObject);
+            //saltador.GetComponent<Button>().onClick.AddListener(() => botar(saltador));
+            PetitSaltador.SetActive(false);
+
 
             GameObject mare = new GameObject("mare", typeof(RectTransform));
             mare.transform.SetParent(botifler.transform);
@@ -127,6 +136,10 @@ public class GSTRodanxes : MonoBehaviour {
         esCanviant=true;
 
         float signe = Mathf.Sign(OnVaig - OnSoc);
+        int OnEra =  Mathf.RoundToInt(OnSoc);
+        int present = 0,previ;
+        while (present<posicio.Length && posicio[present]<=Mathf.RoundToInt(OnSoc)) { present++; }
+        present--;
 
         while (Mathf.Abs(OnSoc-OnVaig) > 0.001f) {
             ActUbi();
@@ -147,9 +160,32 @@ public class GSTRodanxes : MonoBehaviour {
                                                                        contenidor.localPosition.y,
                                                                        contenidor.localPosition.z); 
 
+            if (OnEra!=Mathf.RoundToInt(OnSoc)) {
+                previ = present;
+                present=0;
+                while (present<posicio.Length && posicio[present]<=Mathf.RoundToInt(OnSoc)) { present++; }
+                present--;
+                OnEra =  Mathf.RoundToInt(OnSoc);
+                if (previ!=present) { StartCoroutine(ActualitzarSaltador(previ, present)); }  
+            }
+
             yield return new WaitForSeconds(Time.deltaTime);
         }
         esCanviant=false;
+    }
+
+    private IEnumerator ActualitzarSaltador(int ahir, int avui)  {
+        RectTransform passat =  saltadorMare.transform.GetChild(ahir).GetComponent<RectTransform>();
+        RectTransform present =  saltadorMare.transform.GetChild(avui).GetComponent<RectTransform>();
+
+        for (int i=1; i<present.gameObject.transform.childCount; i++) { present.gameObject.transform.GetChild(i).gameObject.SetActive(true); }
+        for (int i=1; i<passat.gameObject.transform.childCount; i++)  { passat.gameObject.transform.GetChild(i).gameObject.SetActive(false); }  
+
+        while (present.sizeDelta!=new Vector2(655f, 100f)) {
+            present.sizeDelta = Vector2.MoveTowards(present.sizeDelta, new Vector2(655f, 100f), Time.deltaTime * forca); 
+            passat.sizeDelta = Vector2.MoveTowards(passat.sizeDelta, new Vector2(100f, 100f), Time.deltaTime * forca); 
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
     private void DeCopIVolta (int tancar, int obrir) {
