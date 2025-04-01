@@ -62,7 +62,7 @@ public class GSTRodanxes : MonoBehaviour {
         contenidor.localPosition =  new Vector3 (1611.617f, contenidor.localPosition.y, contenidor.localPosition.z); 
         OnSoc=3f;
         OnVaig=3f;
-        mares[3].transform.localScale = new Vector3(1.5f,1.5f,0f);
+        mares[3].transform.localScale = new Vector3(1.3f,1.3f,0f);
         for (int k = 0; k < mares[3].transform.childCount-1; k++) { mares[3].transform.GetChild(k).GetComponent<Button>().interactable=true; } 
     }
 
@@ -73,23 +73,24 @@ public class GSTRodanxes : MonoBehaviour {
         saltador.GetComponent<Image>().color=colors[vaig];
         saltador.transform.GetChild(0).gameObject.GetComponent<Image>().sprite=follets[vaig];
         saltador.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text=noms[vaig];
-        saltador.GetComponent<Button>().onClick.AddListener(() => botar(saltador));
+        saltador.GetComponent<Button>().onClick.AddListener(() => Intermurs(saltador));
         posicio[vaig] = Mathf.FloorToInt(OnSoc);
 
         int inici = 0;
         int fi = divisor<peces.Length ? divisor:peces.Length;
+        int iterador = 0;
 
         while (inici<fi) {
 
             GameObject PetitSaltador = Instantiate(saltadorPrefab, Vector3.zero, Quaternion.identity, saltador.transform);
             PetitSaltador.GetComponent<Image>().color=colors[vaig];
             PetitSaltador.transform.localScale = new Vector3 (0.4f,0.4f,0f);
-            PetitSaltador.transform.localPosition += new Vector3(inici*8f-80f,-80f,0f);
+            PetitSaltador.transform.localPosition += new Vector3( (iterador - ((peces.Length + divisor - 1) / (2 * divisor))) * 50f + 20f   ,-80f,0f); 
             Destroy(PetitSaltador.transform.GetChild(0).gameObject);
             Destroy(PetitSaltador.transform.GetChild(1).gameObject);
-            //saltador.GetComponent<Button>().onClick.AddListener(() => botar(saltador));
+            int OnSalto = Mathf.RoundToInt(OnSoc);
+            PetitSaltador.GetComponent<Button>().onClick.AddListener(() => Intramurs(OnSalto));
             PetitSaltador.SetActive(false);
-
 
             GameObject mare = new GameObject("mare", typeof(RectTransform));
             mare.transform.SetParent(botifler.transform);
@@ -124,11 +125,10 @@ public class GSTRodanxes : MonoBehaviour {
 
             inici+=divisor;
             fi = divisor<peces.Length-inici ? inici+divisor:peces.Length;
+            iterador++;
 
         }
     }
-
-    void Update() {}
 
     public void ActUbi() { OnSoc = (contenidor.sizeDelta.x/2f - contenidor.localPosition.x) / (individu.sizeDelta.x + botifler.spacing); }
 
@@ -169,13 +169,13 @@ public class GSTRodanxes : MonoBehaviour {
                 if (previ!=present) { StartCoroutine(ActualitzarSaltador(previ, present)); }  
             }
 
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
         }
         esCanviant=false;
     }
 
-    private IEnumerator ActualitzarSaltador(int ahir, int avui)  {
-        RectTransform passat =  saltadorMare.transform.GetChild(ahir).GetComponent<RectTransform>();
+    private IEnumerator ActualitzarSaltador(int ahir, int avui)  {  // Hay un error por el que si vas muy rapido, se desincroniza o se ponen todos grossos
+        RectTransform passat =   saltadorMare.transform.GetChild(ahir).GetComponent<RectTransform>();
         RectTransform present =  saltadorMare.transform.GetChild(avui).GetComponent<RectTransform>();
 
         for (int i=1; i<present.gameObject.transform.childCount; i++) { present.gameObject.transform.GetChild(i).gameObject.SetActive(true); }
@@ -224,15 +224,22 @@ public class GSTRodanxes : MonoBehaviour {
     }
 
     public void BotoTancar() {
-
-
+        if (transform.parent.localScale.x==0) { transform.parent.localScale = new Vector3(1f,1f,1f); }
+        else                                  { transform.parent.localScale = new Vector3(0f,0f,0f); }
     }
 
-    public void botar(GameObject  boto) {
+    public void Intermurs(GameObject  boto) {
         if (esCanviant) {return;} 
-         OnVaig = posicio[boto.transform.GetSiblingIndex()];
-         StartCoroutine(EnCanviarValor());
+        OnVaig = boto.GetComponent<RectTransform>().rect.width == 100 ? posicio[boto.transform.GetSiblingIndex()] : OnVaig+1 ;
+        StartCoroutine(EnCanviarValor());
     }
+
+    public void Intramurs(int OnSalto) {
+        if (esCanviant || OnSalto==Mathf.RoundToInt(OnVaig)) {return;} 
+        OnVaig = OnSalto;
+        StartCoroutine(EnCanviarValor());
+    }
+
 
 
 }

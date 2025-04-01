@@ -14,11 +14,14 @@ public class MouSenseUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     private float moviment;
 
     void Update() {
-        if (!PotSer) { return; }
+        if (!PotSer) { 
+            if (!cap.esCanviant && Mathf.Abs(cap.OnSoc - Mathf.RoundToInt(cap.OnSoc)) != 0f) { StartCoroutine(cap.EnCanviarValor()); }
+            return; 
+        }
 
-        moviment = Mathf.Clamp(Input.mousePosition.x - comencament, -100, 100);
+        moviment = Mathf.Clamp(Input.mousePosition.x - comencament, -75f, 75f);
 
-        if (!Es && Mathf.Abs(moviment) < 50f) { return; }
+        if (!Es && Mathf.Abs(moviment) < 10f) { return; }
         Es = true;
 
         if (cap.esCanviant) {return;}  
@@ -33,13 +36,15 @@ public class MouSenseUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         if (Mathf.Abs(cap.OnSoc - cap.OnVaig) > 0.2f) { cap.OnVaig += Mathf.Sign(cap.OnSoc - cap.OnVaig); StartCoroutine(cap.EnCanviarValor()); }
     }
 
-    public void OnPointerDown(PointerEventData eventData) {
+    public void OnPointerDown(PointerEventData dades) {
+        if (dades.button == PointerEventData.InputButton.Right) {return;}
         PotSer = true;
         Es = false;
         comencament = Input.mousePosition.x;
     }
 
-    public void OnPointerUp(PointerEventData eventData) {
+    public void OnPointerUp(PointerEventData dades) {
+        if (dades.button == PointerEventData.InputButton.Right) {return;}
         PotSer = false;
         if (!Es) { cap.OnVaig+=Input.mousePosition.x >  Screen.width/2f ? 1f : -1f; StartCoroutine(cap.EnCanviarValor()); }
         Es = false;
