@@ -383,7 +383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b1e3ec40c03444ab602429a4e883eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alteracio: 0
   objecte: {fileID: 0}
+  pucActuar: 1
 --- !u!114 &241503426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +455,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 241503425}
         m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: esquerra
+        m_MethodName: centre
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -463,24 +465,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b1a65486-8226-4a0c-b421-1454a349f665
-    m_ActionName: 'Prometeu/esquerra[/Keyboard/leftArrow]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 241503425}
-        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: dreta
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ddcf75de-626d-4716-8933-f2dfaada178c
-    m_ActionName: 'Prometeu/dreta[/Keyboard/rightArrow]'
+    m_ActionId: fa0c4b32-b483-4337-a6f7-1edcfe7f7995
+    m_ActionName: 'Prometeu/centre[/Mouse/leftButton,/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Prometeu

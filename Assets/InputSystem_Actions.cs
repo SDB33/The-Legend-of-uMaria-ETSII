@@ -608,46 +608,48 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""id"": ""b54be9ff-d0c8-4a80-a7b6-daa064f5fafd"",
             ""actions"": [
                 {
-                    ""name"": ""esquerra"",
-                    ""type"": ""Button"",
-                    ""id"": ""b1a65486-8226-4a0c-b421-1454a349f665"",
-                    ""expectedControlType"": """",
+                    ""name"": ""centre"",
+                    ""type"": ""Value"",
+                    ""id"": ""fa0c4b32-b483-4337-a6f7-1edcfe7f7995"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""dreta"",
-                    ""type"": ""Button"",
-                    ""id"": ""ddcf75de-626d-4716-8933-f2dfaada178c"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""d6adc0b4-d0eb-4e04-842e-1c5dd4723fa3"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""3de61846-7143-4453-8527-833e78cc73d0"",
+                    ""path"": ""1DAxis(whichSideWins=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""centre"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""5bdbe1fc-f47b-4b0d-96a8-bca7d295a250"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""esquerra"",
+                    ""action"": ""centre"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""40b4c4ae-1634-4889-ba2e-2fbcd19b149a"",
+                    ""name"": ""negative"",
+                    ""id"": ""0382e93f-e991-49e1-a9c0-27e206877bb1"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""dreta"",
+                    ""action"": ""centre"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -729,8 +731,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         // Prometeu
         m_Prometeu = asset.FindActionMap("Prometeu", throwIfNotFound: true);
-        m_Prometeu_esquerra = m_Prometeu.FindAction("esquerra", throwIfNotFound: true);
-        m_Prometeu_dreta = m_Prometeu.FindAction("dreta", throwIfNotFound: true);
+        m_Prometeu_centre = m_Prometeu.FindAction("centre", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1007,8 +1008,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     // Prometeu
     private readonly InputActionMap m_Prometeu;
     private List<IPrometeuActions> m_PrometeuActionsCallbackInterfaces = new List<IPrometeuActions>();
-    private readonly InputAction m_Prometeu_esquerra;
-    private readonly InputAction m_Prometeu_dreta;
+    private readonly InputAction m_Prometeu_centre;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
     /// </summary>
@@ -1021,13 +1021,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public PrometeuActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/esquerra".
+        /// Provides access to the underlying input action "Prometeu/centre".
         /// </summary>
-        public InputAction @esquerra => m_Wrapper.m_Prometeu_esquerra;
-        /// <summary>
-        /// Provides access to the underlying input action "Prometeu/dreta".
-        /// </summary>
-        public InputAction @dreta => m_Wrapper.m_Prometeu_dreta;
+        public InputAction @centre => m_Wrapper.m_Prometeu_centre;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1054,12 +1050,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PrometeuActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PrometeuActionsCallbackInterfaces.Add(instance);
-            @esquerra.started += instance.OnEsquerra;
-            @esquerra.performed += instance.OnEsquerra;
-            @esquerra.canceled += instance.OnEsquerra;
-            @dreta.started += instance.OnDreta;
-            @dreta.performed += instance.OnDreta;
-            @dreta.canceled += instance.OnDreta;
+            @centre.started += instance.OnCentre;
+            @centre.performed += instance.OnCentre;
+            @centre.canceled += instance.OnCentre;
         }
 
         /// <summary>
@@ -1071,12 +1064,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="PrometeuActions" />
         private void UnregisterCallbacks(IPrometeuActions instance)
         {
-            @esquerra.started -= instance.OnEsquerra;
-            @esquerra.performed -= instance.OnEsquerra;
-            @esquerra.canceled -= instance.OnEsquerra;
-            @dreta.started -= instance.OnDreta;
-            @dreta.performed -= instance.OnDreta;
-            @dreta.canceled -= instance.OnDreta;
+            @centre.started -= instance.OnCentre;
+            @centre.performed -= instance.OnCentre;
+            @centre.canceled -= instance.OnCentre;
         }
 
         /// <summary>
@@ -1261,18 +1251,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface IPrometeuActions
     {
         /// <summary>
-        /// Method invoked when associated input action "esquerra" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "centre" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnEsquerra(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "dreta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDreta(InputAction.CallbackContext context);
+        void OnCentre(InputAction.CallbackContext context);
     }
 }

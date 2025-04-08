@@ -522,46 +522,48 @@
             "id": "b54be9ff-d0c8-4a80-a7b6-daa064f5fafd",
             "actions": [
                 {
-                    "name": "esquerra",
-                    "type": "Button",
-                    "id": "b1a65486-8226-4a0c-b421-1454a349f665",
-                    "expectedControlType": "",
+                    "name": "centre",
+                    "type": "Value",
+                    "id": "fa0c4b32-b483-4337-a6f7-1edcfe7f7995",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "dreta",
-                    "type": "Button",
-                    "id": "ddcf75de-626d-4716-8933-f2dfaada178c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "d6adc0b4-d0eb-4e04-842e-1c5dd4723fa3",
+                    "name": "1D Axis",
+                    "id": "3de61846-7143-4453-8527-833e78cc73d0",
+                    "path": "1DAxis(whichSideWins=1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "centre",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "5bdbe1fc-f47b-4b0d-96a8-bca7d295a250",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "esquerra",
+                    "action": "centre",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "40b4c4ae-1634-4889-ba2e-2fbcd19b149a",
+                    "name": "negative",
+                    "id": "0382e93f-e991-49e1-a9c0-27e206877bb1",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "dreta",
+                    "action": "centre",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }
