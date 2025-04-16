@@ -42,6 +42,9 @@ public class GSTRodanxes : MonoBehaviour {
 
     public bool esCanviant;
 
+    [SerializeField] private float VeloCam;
+    [SerializeField] private bool vasAcabar;
+
     void Start() {
         BotoSelecArross.cap=this;
         MouSenseUI.cap=this;
@@ -239,6 +242,25 @@ public class GSTRodanxes : MonoBehaviour {
         OnVaig = OnSalto;
         StartCoroutine(EnCanviarValor());
     }
+
+    public void QuantMouCam (InputAction.CallbackContext canvi) {
+        if (!vasAcabar || !canvi.performed || transform.parent.localScale.x!=0) {return;} //Este  transform.parent.localScale.x!=0 es porque eso representa cuando está puesto el menú, hay que cambiarlo si se cambia la condicion del menu
+        StartCoroutine( ActualitzarSaltador( canvi.ReadValue<Vector2>() ) ); 
+    }
+
+    private IEnumerator ActualitzarSaltador(Vector2 futur)  {
+        vasAcabar = false;
+        futur *= new Vector2(Camera.main.aspect,1f) * Camera.main.orthographicSize * 2f;  // Esta forma de calcular tiene en cuenta el tamanyo de la camara,si se aleja, el movimiento se hara con respecto al tamanyo grande de la camara
+        Vector3 CamPassada = new Vector3(futur.x,futur.y,0f) + Camera.main.transform.position;
+
+        while (Camera.main.transform.position!=CamPassada) {
+            Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, CamPassada, Time.deltaTime * VeloCam);
+            yield return new WaitForSeconds(0.01f);  
+        }   
+        Camera.main.transform.position = CamPassada;
+        vasAcabar = true;  
+    }
+
 
 
 

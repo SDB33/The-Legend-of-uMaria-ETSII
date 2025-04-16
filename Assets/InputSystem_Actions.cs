@@ -615,6 +615,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MouCam"",
+                    ""type"": ""Value"",
+                    ""id"": ""1b2b5a3f-2c88-4f0b-bb12-33e3e01911e9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -648,6 +657,61 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""centre"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Teclat"",
+                    ""id"": ""5296db18-65a4-41c4-8887-76ccfde3eb4e"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouCam"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e8496f7f-964f-41ed-bf34-9ccb67ec59b1"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5b0e7ea2-b180-45f7-ba61-cce1f737932c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8185a2f2-2b8b-4baf-ad1f-8ab59f752b71"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9ad3557f-3e18-4f2c-9d60-70c2f58e11da"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouCam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -732,6 +796,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Prometeu
         m_Prometeu = asset.FindActionMap("Prometeu", throwIfNotFound: true);
         m_Prometeu_centre = m_Prometeu.FindAction("centre", throwIfNotFound: true);
+        m_Prometeu_MouCam = m_Prometeu.FindAction("MouCam", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1009,6 +1074,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Prometeu;
     private List<IPrometeuActions> m_PrometeuActionsCallbackInterfaces = new List<IPrometeuActions>();
     private readonly InputAction m_Prometeu_centre;
+    private readonly InputAction m_Prometeu_MouCam;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
     /// </summary>
@@ -1024,6 +1090,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Prometeu/centre".
         /// </summary>
         public InputAction @centre => m_Wrapper.m_Prometeu_centre;
+        /// <summary>
+        /// Provides access to the underlying input action "Prometeu/MouCam".
+        /// </summary>
+        public InputAction @MouCam => m_Wrapper.m_Prometeu_MouCam;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1053,6 +1123,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @centre.started += instance.OnCentre;
             @centre.performed += instance.OnCentre;
             @centre.canceled += instance.OnCentre;
+            @MouCam.started += instance.OnMouCam;
+            @MouCam.performed += instance.OnMouCam;
+            @MouCam.canceled += instance.OnMouCam;
         }
 
         /// <summary>
@@ -1067,6 +1140,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @centre.started -= instance.OnCentre;
             @centre.performed -= instance.OnCentre;
             @centre.canceled -= instance.OnCentre;
+            @MouCam.started -= instance.OnMouCam;
+            @MouCam.performed -= instance.OnMouCam;
+            @MouCam.canceled -= instance.OnMouCam;
         }
 
         /// <summary>
@@ -1257,5 +1333,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCentre(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MouCam" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouCam(InputAction.CallbackContext context);
     }
 }
