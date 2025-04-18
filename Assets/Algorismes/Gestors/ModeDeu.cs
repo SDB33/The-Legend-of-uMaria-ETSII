@@ -5,46 +5,55 @@ using System.Collections;
 
 
 
-public class ModeDeu : MonoBehaviour {
-
-    public float alteracio; //+1 clic esquerre -1 clic dret
-
-    RaycastHit2D cop;
+public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     
     public GameObject objecte;
 
-    public bool pucActuar;
+    private bool esticDestruint;
+
+    public static bool estiConstruint;
     // Si al final lo hago con tilemap, se puede ver si el ratón está tocando un objeto y, si no, que mire el tilemap y para mover piezas del tilemap, se podría habilitar un gameobject que es el que realmente
     // se movera y donde se ponga se destruye el tile anterior para poner el nuevo
-    void Start() { 
-        Application.targetFrameRate = 60;  // borrar esto
-        Objecte.deu = this; 
-    } 
+    void Start() { Application.targetFrameRate = 60; } // borrar esto y ponerlo en algún archivo de configuracio 
 
+    public void OnPointerDown(PointerEventData dades) {
+        if (estiConstruint || esticDestruint) {return;}
+        if      (dades.button == PointerEventData.InputButton.Left  && objecte != null) { StartCoroutine(Construir()); }
+        else if (dades.button == PointerEventData.InputButton.Right                   ) { StartCoroutine(Destruir());  }
+    }
+    public void OnPointerUp(PointerEventData dades) {
+        Objecte.pucMourem = false;  // Solución muy muy cutre. Esto es para objetos como Entitat que se construyen antes y como no les has dado click, no llaman a OnMouseDown ni OnMouseUp
+        if      (dades.button == PointerEventData.InputButton.Left)   { estiConstruint = false; }
+        else if (dades.button == PointerEventData.InputButton.Right)  { esticDestruint = false; }
+    }
 
-    void Update() { //Si el new input system me dejara quitar este update, seria genial
-
-        if (EventSystem.current.IsPointerOverGameObject() || alteracio == 0 || !pucActuar ) {return;}
-
-        if (alteracio ==  1) {
-            if ( objecte==null) {return;}
-
-            cop = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,Mathf.Infinity, 1 << objecte.layer);
+    private IEnumerator Construir() {
+        if (Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,Mathf.Infinity, 1 << objecte.layer).collider==null) { estiConstruint = true; }  // el tema está en que la ui en la que está este script recibe el click aunque tenga un objeto delante entonces si tiene un objeto delante del mismo tipo del que va a construir, no hace nada
+        while (estiConstruint) {
+            RaycastHit2D cop = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,Mathf.Infinity, 1 << objecte.layer);
 
             if (cop.collider!=null) {
-                if (cop.collider.gameObject.name == objecte.name + "(Clone)" ) {return;}
+                if (cop.collider.gameObject.name == objecte.name + "(Clone)" ) {yield return new WaitForSeconds(.001f); continue;}
                 Destroy(cop.collider.gameObject);
             }
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(objecte,new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f ), Quaternion.identity);  
+            Instantiate(objecte,new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f ), Quaternion.identity).GetComponent<Objecte>().joControloAra();
+            yield return new WaitForSeconds(.001f);
         }
-        else {
-            cop = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (cop.collider==null) { return; }
-            Destroy(cop.collider.gameObject);
+
+    }
+
+    private IEnumerator Destruir() {
+        esticDestruint = true;
+        while (esticDestruint) {
+            RaycastHit2D cop = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (cop.collider!=null) { Destroy(cop.collider.gameObject); }
+            yield return new WaitForSeconds(.001f);
         }
     }
 
-    public void centre(InputAction.CallbackContext canvi) { alteracio = canvi.ReadValue<float>(); }
+    public void Desfer (InputAction.CallbackContext canvi) {}
+    public void Refer (InputAction.CallbackContext canvi) {}
+
 
 }

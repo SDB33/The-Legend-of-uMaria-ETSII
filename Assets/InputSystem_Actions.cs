@@ -608,15 +608,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""id"": ""b54be9ff-d0c8-4a80-a7b6-daa064f5fafd"",
             ""actions"": [
                 {
-                    ""name"": ""centre"",
-                    ""type"": ""Value"",
-                    ""id"": ""fa0c4b32-b483-4337-a6f7-1edcfe7f7995"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""MouCam"",
                     ""type"": ""Value"",
                     ""id"": ""1b2b5a3f-2c88-4f0b-bb12-33e3e01911e9"",
@@ -627,39 +618,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""3de61846-7143-4453-8527-833e78cc73d0"",
-                    ""path"": ""1DAxis(whichSideWins=1)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""centre"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""5bdbe1fc-f47b-4b0d-96a8-bca7d295a250"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""centre"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""0382e93f-e991-49e1-a9c0-27e206877bb1"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""centre"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
                 {
                     ""name"": ""Teclat"",
                     ""id"": ""5296db18-65a4-41c4-8887-76ccfde3eb4e"",
@@ -795,7 +753,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         // Prometeu
         m_Prometeu = asset.FindActionMap("Prometeu", throwIfNotFound: true);
-        m_Prometeu_centre = m_Prometeu.FindAction("centre", throwIfNotFound: true);
         m_Prometeu_MouCam = m_Prometeu.FindAction("MouCam", throwIfNotFound: true);
     }
 
@@ -1073,7 +1030,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     // Prometeu
     private readonly InputActionMap m_Prometeu;
     private List<IPrometeuActions> m_PrometeuActionsCallbackInterfaces = new List<IPrometeuActions>();
-    private readonly InputAction m_Prometeu_centre;
     private readonly InputAction m_Prometeu_MouCam;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
@@ -1086,10 +1042,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
         public PrometeuActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
-        /// <summary>
-        /// Provides access to the underlying input action "Prometeu/centre".
-        /// </summary>
-        public InputAction @centre => m_Wrapper.m_Prometeu_centre;
         /// <summary>
         /// Provides access to the underlying input action "Prometeu/MouCam".
         /// </summary>
@@ -1120,9 +1072,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PrometeuActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PrometeuActionsCallbackInterfaces.Add(instance);
-            @centre.started += instance.OnCentre;
-            @centre.performed += instance.OnCentre;
-            @centre.canceled += instance.OnCentre;
             @MouCam.started += instance.OnMouCam;
             @MouCam.performed += instance.OnMouCam;
             @MouCam.canceled += instance.OnMouCam;
@@ -1137,9 +1086,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="PrometeuActions" />
         private void UnregisterCallbacks(IPrometeuActions instance)
         {
-            @centre.started -= instance.OnCentre;
-            @centre.performed -= instance.OnCentre;
-            @centre.canceled -= instance.OnCentre;
             @MouCam.started -= instance.OnMouCam;
             @MouCam.performed -= instance.OnMouCam;
             @MouCam.canceled -= instance.OnMouCam;
@@ -1326,13 +1272,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// <seealso cref="PrometeuActions.RemoveCallbacks(IPrometeuActions)" />
     public interface IPrometeuActions
     {
-        /// <summary>
-        /// Method invoked when associated input action "centre" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnCentre(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "MouCam" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

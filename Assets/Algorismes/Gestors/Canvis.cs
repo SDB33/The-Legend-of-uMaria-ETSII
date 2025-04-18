@@ -14,12 +14,12 @@ public class MoureObjecte : Executable {
 
     public void aplicar() {
         mogut.transform.position = posFi;
-        if (desactivat!=null) { desactivat.SetActive(true); }
+        if (desactivat!=null) { desactivat.SetActive(false); }
         
     }
     public void revertir() {
         mogut.transform.position = posIni;
-        if (desactivat!=null) { desactivat.SetActive(false); }
+        if (desactivat!=null) { desactivat.SetActive(true); }
     }
 
     public void rebutjar() {
@@ -50,9 +50,9 @@ public class ArrayCircular {
     }
 
     public void Desfer() { 
-        if (index == inici) {return;} 
-        accions[index].revertir(); 
-        index = (index - 1 + accions.Length) % accions.Length; 
+        if (index == inici) {return;}  
+        index = (index - 1 + accions.Length) % accions.Length;
+        accions[index].revertir();
     }
     public void Refer() { 
         if (index == fi ) {return;} 

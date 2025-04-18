@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Entitat : Objecte {
 
-    void Start () {  this.GetComponent<SpriteRenderer>().sortingOrder = 1; deu.pucActuar = false; StartCoroutine(MouMe()); }
+    void Start () { base.OnMouseDown(); }
 
+    public override void joControloAra () { ModeDeu.estiConstruint = false; }
 
 }
