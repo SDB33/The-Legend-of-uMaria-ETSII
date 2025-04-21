@@ -615,6 +615,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Desfer"",
+                    ""type"": ""Button"",
+                    ""id"": ""c7229f3d-f914-4e59-b667-826cea7275f4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Refer"",
+                    ""type"": ""Button"",
+                    ""id"": ""b42acd0e-11fd-4d47-bad0-33528a54c8e4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -670,6 +688,72 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""b952a982-155f-479d-ab6d-cb6363717465"",
+                    ""path"": ""OneModifier(modifiersOrder=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Desfer"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""08c5f6c9-e670-4a58-b11a-97157c6ead4e"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Desfer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""43284c5b-888c-4dcb-8f3c-53ac52bb5eb2"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Desfer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""a582f334-28c5-4ec0-8388-b19ab7d1283c"",
+                    ""path"": ""OneModifier(modifiersOrder=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Refer"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""2ae975dd-efa3-457d-806e-4d0d8ae751fa"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Refer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""803b1c93-a162-4f47-bd22-f6135b0a31bc"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Refer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -754,6 +838,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Prometeu
         m_Prometeu = asset.FindActionMap("Prometeu", throwIfNotFound: true);
         m_Prometeu_MouCam = m_Prometeu.FindAction("MouCam", throwIfNotFound: true);
+        m_Prometeu_Desfer = m_Prometeu.FindAction("Desfer", throwIfNotFound: true);
+        m_Prometeu_Refer = m_Prometeu.FindAction("Refer", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1031,6 +1117,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Prometeu;
     private List<IPrometeuActions> m_PrometeuActionsCallbackInterfaces = new List<IPrometeuActions>();
     private readonly InputAction m_Prometeu_MouCam;
+    private readonly InputAction m_Prometeu_Desfer;
+    private readonly InputAction m_Prometeu_Refer;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
     /// </summary>
@@ -1046,6 +1134,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Prometeu/MouCam".
         /// </summary>
         public InputAction @MouCam => m_Wrapper.m_Prometeu_MouCam;
+        /// <summary>
+        /// Provides access to the underlying input action "Prometeu/Desfer".
+        /// </summary>
+        public InputAction @Desfer => m_Wrapper.m_Prometeu_Desfer;
+        /// <summary>
+        /// Provides access to the underlying input action "Prometeu/Refer".
+        /// </summary>
+        public InputAction @Refer => m_Wrapper.m_Prometeu_Refer;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1075,6 +1171,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MouCam.started += instance.OnMouCam;
             @MouCam.performed += instance.OnMouCam;
             @MouCam.canceled += instance.OnMouCam;
+            @Desfer.started += instance.OnDesfer;
+            @Desfer.performed += instance.OnDesfer;
+            @Desfer.canceled += instance.OnDesfer;
+            @Refer.started += instance.OnRefer;
+            @Refer.performed += instance.OnRefer;
+            @Refer.canceled += instance.OnRefer;
         }
 
         /// <summary>
@@ -1089,6 +1191,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MouCam.started -= instance.OnMouCam;
             @MouCam.performed -= instance.OnMouCam;
             @MouCam.canceled -= instance.OnMouCam;
+            @Desfer.started -= instance.OnDesfer;
+            @Desfer.performed -= instance.OnDesfer;
+            @Desfer.canceled -= instance.OnDesfer;
+            @Refer.started -= instance.OnRefer;
+            @Refer.performed -= instance.OnRefer;
+            @Refer.canceled -= instance.OnRefer;
         }
 
         /// <summary>
@@ -1279,5 +1387,19 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouCam(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Desfer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDesfer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Refer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRefer(InputAction.CallbackContext context);
     }
 }

@@ -574,9 +574,37 @@ MonoBehaviour:
     m_ActionId: 1b2b5a3f-2c88-4f0b-bb12-33e3e01911e9
     m_ActionName: 'Prometeu/MouCam[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3fd810f8-1872-4671-b525-1f882978b2f8
-    m_ActionName: 'Prometeu/Modelar[/Mouse/leftButton,/Mouse/rightButton]'
+      m_Calls:
+      - m_Target: {fileID: 1663753512}
+        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
+        m_MethodName: Desfer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c7229f3d-f914-4e59-b667-826cea7275f4
+    m_ActionName: 'Prometeu/Desfer[/Keyboard/ctrl,/Keyboard/z]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1663753512}
+        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
+        m_MethodName: Refer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b42acd0e-11fd-4d47-bad0-33528a54c8e4
+    m_ActionName: 'Prometeu/Refer[/Keyboard/ctrl,/Keyboard/y]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Prometeu

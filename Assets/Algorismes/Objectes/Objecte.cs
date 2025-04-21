@@ -26,7 +26,7 @@ public class Objecte : MonoBehaviour {
 
     protected void movimentFinal(Vector3 posIni) {
         MoureObjecte accio =  new MoureObjecte();
-        accio.mogut = this.gameObject; 
+        accio.ModificaM.Add(this.gameObject);
         accio.posIni = posIni;
 
         posRatoli = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -39,10 +39,11 @@ public class Objecte : MonoBehaviour {
         foreach (RaycastHit2D hit in Physics2D.RaycastAll(transform.position, Vector2.right, 0.2f, 1 << gameObject.layer)) { 
             if (hit.collider.gameObject != gameObject) { 
                 hit.collider.gameObject.SetActive(false);
-                accio.desactivat = hit.collider.gameObject;
+                accio.DesactivaM.Add( hit.collider.gameObject);
             } 
         }
 
-        Canvis.introduir(accio);
+        // if (posIni!=transform.position) { Canvis.introduir(accio); }
+        Canvis.introduir(accio); 
     }
 }
