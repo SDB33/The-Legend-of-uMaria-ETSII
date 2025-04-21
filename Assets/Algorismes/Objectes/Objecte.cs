@@ -43,7 +43,7 @@ public class Objecte : MonoBehaviour {
             } 
         }
 
-        // if (posIni!=transform.position) { Canvis.introduir(accio); }
-        Canvis.introduir(accio); 
+        if (posIni!=transform.position) { Canvis.introduir(accio); }
+        //Canvis.introduir(accio); 
     }
 }
