@@ -55,11 +55,13 @@ public class crearIDestruirObjecte : Executable {
 public class ArrayCircular {
 
     private Executable[] accions;
+    private Dictionary<GameObject, int> referenciats;
     
     private int inici, fi, index;
 
     public ArrayCircular (int tam) {
         accions = new Executable[tam];
+        referenciats = new Dictionary<GameObject, int>();
         inici = 0;
         fi = 0;
         index = 0;
@@ -67,37 +69,35 @@ public class ArrayCircular {
 
     public void introduir(Executable accio) {
         if (index != fi) { fi = index; }
-        if (accions[fi] != null) { Rebutjar(accions[fi], accio); }
+
+        foreach (GameObject objecte in accio.ModificaM)  { referenciats[objecte] = referenciats.TryGetValue(objecte, out int comptador) ? comptador + 1 : 1; }
+        foreach (GameObject objecte in accio.DesactivaM) { referenciats[objecte] = referenciats.TryGetValue(objecte, out int comptador) ? comptador + 1 : 1; }
+
+        if (accions[fi] != null) { Rebutjar(accions[fi]); }
         accions[fi] = accio;
         fi = (fi + 1) % accions.Length;
         if (fi == inici) { inici = (inici + 1) % accions.Length;  }
         index = fi;
     }
 
-    private void Rebutjar(Executable accioAntiga, Executable accioNova) {
-        HashSet<GameObject> referenciats = new HashSet<GameObject>();
-    
-        int i = inici;
-        while (i != fi) {
-            Executable acc = accions[i];
-            if (acc != null && acc != accioAntiga) {
-                foreach (GameObject objecte in acc.ModificaM) { referenciats.Add(objecte); }
-                foreach (GameObject objecte in acc.DesactivaM) { referenciats.Add(objecte); }
-            }
-            i = (i + 1) % accions.Length;
-        }
-
-        foreach (GameObject objecte in accioNova.ModificaM) { referenciats.Add(objecte); }
-        foreach (GameObject objecte in accioNova.DesactivaM) { referenciats.Add(objecte); }
-
+    private void Rebutjar(Executable accioAntiga) {
         foreach (GameObject objecte in accioAntiga.ModificaM) {
-            if (objecte != null && !objecte.activeSelf && !referenciats.Contains(objecte)) {
-                Object.Destroy(objecte);
+            if (referenciats.ContainsKey(objecte)) {
+                referenciats[objecte]--;
+                if (referenciats[objecte] == 0) {
+                    referenciats.Remove(objecte);
+                    if (!objecte.activeSelf) { Object.Destroy(objecte);}
+                }
             }
         }
+
         foreach (GameObject objecte in accioAntiga.DesactivaM) {
-            if (objecte != null && !objecte.activeSelf && !referenciats.Contains(objecte)) {
-                Object.Destroy(objecte);
+            if (referenciats.ContainsKey(objecte)) {
+                referenciats[objecte]--;
+                if (referenciats[objecte] == 0) {
+                    referenciats.Remove(objecte);
+                    if (!objecte.activeSelf) { Object.Destroy(objecte); }
+                }
             }
         }
     }
