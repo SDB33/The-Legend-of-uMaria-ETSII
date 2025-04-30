@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 85d9a21f55cb3774f9385af25535a023
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8301815229739292259
+    second: TinyRanch_Characters_0
+  - first:
+      213: 608107586157859329
+    second: TinyRanch_Characters_1
+  - first:
+      213: 3129955803285805332
+    second: TinyRanch_Characters_2
+  - first:
+      213: -5467934446223930954
+    second: TinyRanch_Characters_3
+  - first:
+      213: -6151401439283474085
+    second: TinyRanch_Characters_4
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TinyRanch_Characters_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 184
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102d822b0ae607800800000000000000
+      internalID: 608107586157859329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a05a0b5dc1d88fe418fa54d89328459f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TinyRanch_Characters_0: -8301815229739292259
+      TinyRanch_Characters_1: 608107586157859329
+      TinyRanch_Characters_10: -2047878499
+      TinyRanch_Characters_11: 2014454763
+      TinyRanch_Characters_12: -258580914
+      TinyRanch_Characters_13: 1571820891
+      TinyRanch_Characters_14: 44005546
+      TinyRanch_Characters_15: 1118195090
+      TinyRanch_Characters_16: -999701963
+      TinyRanch_Characters_17: -1243243412
+      TinyRanch_Characters_18: 225962738
+      TinyRanch_Characters_19: -1869274909
+      TinyRanch_Characters_2: 3129955803285805332
+      TinyRanch_Characters_20: -142998488
+      TinyRanch_Characters_21: -1202678685
+      TinyRanch_Characters_22: 496692937
+      TinyRanch_Characters_23: 120059597
+      TinyRanch_Characters_24: 1728598772
+      TinyRanch_Characters_25: 310452233
+      TinyRanch_Characters_26: -1107397150
+      TinyRanch_Characters_27: 1595545595
+      TinyRanch_Characters_28: 77365332
+      TinyRanch_Characters_29: 1305371590
+      TinyRanch_Characters_3: -5467934446223930954
+      TinyRanch_Characters_30: 1435008018
+      TinyRanch_Characters_31: -465844582
+      TinyRanch_Characters_32: -1371538939
+      TinyRanch_Characters_33: -1470136067
+      TinyRanch_Characters_34: -452719953
+      TinyRanch_Characters_35: 282277986
+      TinyRanch_Characters_36: -2041285387
+      TinyRanch_Characters_37: 1705607015
+      TinyRanch_Characters_38: -797110101
+      TinyRanch_Characters_39: 966402150
+      TinyRanch_Characters_4: -6151401439283474085
+      TinyRanch_Characters_40: 1417828046
+      TinyRanch_Characters_41: -1209803901
+      TinyRanch_Characters_42: -1540744039
+      TinyRanch_Characters_43: -129606277
+      TinyRanch_Characters_44: 914763677
+      TinyRanch_Characters_45: 1967757945
+      TinyRanch_Characters_46: 1115138121
+      TinyRanch_Characters_47: -649961715
+      TinyRanch_Characters_48: 465782267
+      TinyRanch_Characters_49: 1518566444
+      TinyRanch_Characters_5: 579366116
+      TinyRanch_Characters_50: 1936950639
+      TinyRanch_Characters_51: 620710605
+      TinyRanch_Characters_52: 1895339295
+      TinyRanch_Characters_53: -1450844257
+      TinyRanch_Characters_54: -1967634887
+      TinyRanch_Characters_55: 137674779
+      TinyRanch_Characters_56: -2051506559
+      TinyRanch_Characters_57: 1815421075
+      TinyRanch_Characters_58: 1898421333
+      TinyRanch_Characters_59: -662065300
+      TinyRanch_Characters_6: 325468076
+      TinyRanch_Characters_60: 1839610723
+      TinyRanch_Characters_61: -1121000417
+      TinyRanch_Characters_62: -593525365
+      TinyRanch_Characters_63: -1154729672
+      TinyRanch_Characters_64: 555975130
+      TinyRanch_Characters_65: 1149463112
+      TinyRanch_Characters_66: 56854640
+      TinyRanch_Characters_67: -539486224
+      TinyRanch_Characters_68: 1648705306
+      TinyRanch_Characters_69: -1704764671
+      TinyRanch_Characters_7: -1614517195
+      TinyRanch_Characters_70: 423761040
+      TinyRanch_Characters_71: 1271189722
+      TinyRanch_Characters_8: 337049516
+      TinyRanch_Characters_9: -1758331547
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

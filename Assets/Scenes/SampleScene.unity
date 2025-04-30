@@ -776,19 +776,13 @@ MonoBehaviour:
   noms:
   - Terreny
   - Enemics
-  - Claus
-  - Terra
   colors:
   - {r: 0, g: 0.9329295, b: 1, a: 1}
   - {r: 1, g: 0, b: 0.31804752, a: 1}
-  - {r: 0.08550537, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.8657131, a: 1}
   follets:
   - {fileID: 21300000, guid: b2d98f54996544507ade581c727c1c51, type: 3}
   - {fileID: 21300000, guid: 75b928454d106411f99eb3c22a2c2eff, type: 3}
-  - {fileID: 21300000, guid: 4e2a3d7e5b5b01843a978d90f553b672, type: 3}
-  - {fileID: 21300000, guid: 27fcf2ee0895b467f980e5c3c57b655c, type: 3}
-  posicio: 00000000060000000600000006000000
+  posicio: 0000000006000000
   divisor: 6
   Thopasso: {fileID: 1663753512}
   palet: {fileID: 1743693984}

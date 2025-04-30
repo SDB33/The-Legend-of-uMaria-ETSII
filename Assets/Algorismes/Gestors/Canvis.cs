@@ -109,7 +109,7 @@ public class ArrayCircular {
         accions[index].revertir();
     }
     public void Refer() { 
-        if (index == fi ) {return;} 
+        if (index == fi) {return;} 
         accions[index].aplicar();  
         index = (index + 1) % accions.Length; 
     }

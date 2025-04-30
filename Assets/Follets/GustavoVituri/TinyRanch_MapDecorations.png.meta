@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: ddf1b6568a15fac42ac7a748baca5573
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3417081204426841143
+    second: TinyRanch_MapDecorations_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c36971cfb61490d0800000000000000
+      internalID: -3417081204426841143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074c379237e21894abd66389a9734913
+      internalID: 1574008099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20bbb20c2b93ff42b8a091030e28f9e
+      internalID: -470672258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cb1bdd4bc0d044c995f74931575601
+      internalID: 106351542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b9af68b8a818b4ba1f1a78d3099b5c
+      internalID: 1630437926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53cf9bed6873a0d4494677d304255597
+      internalID: -1587870445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d337db81b874ce4ba12657c98f36c92
+      internalID: 1761974881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a51f119371e164c94dec3522c94dd6
+      internalID: 243228892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TinyRanch_MapDecorations_15
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcee42f8d4647d49b114fc1fd7737e5
+      internalID: -5269591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d0aab66cafcfccd4e9459900ea89a5ed
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TinyRanch_MapDecorations_0: -3417081204426841143
+      TinyRanch_MapDecorations_1: 1574008099
+      TinyRanch_MapDecorations_10: -1587870445
+      TinyRanch_MapDecorations_11: -1798466795
+      TinyRanch_MapDecorations_12: 1761974881
+      TinyRanch_MapDecorations_13: 606436424
+      TinyRanch_MapDecorations_14: 243228892
+      TinyRanch_MapDecorations_15: -5269591
+      TinyRanch_MapDecorations_16: -1699284772
+      TinyRanch_MapDecorations_17: -676162776
+      TinyRanch_MapDecorations_18: 1932911557
+      TinyRanch_MapDecorations_19: 1487014944
+      TinyRanch_MapDecorations_2: -1033057626
+      TinyRanch_MapDecorations_20: -1195130957
+      TinyRanch_MapDecorations_21: 1374295903
+      TinyRanch_MapDecorations_22: 1381881938
+      TinyRanch_MapDecorations_23: -1121971150
+      TinyRanch_MapDecorations_24: 1384279877
+      TinyRanch_MapDecorations_25: -1935075588
+      TinyRanch_MapDecorations_26: 402040176
+      TinyRanch_MapDecorations_27: -517456397
+      TinyRanch_MapDecorations_28: -929188901
+      TinyRanch_MapDecorations_29: -1133084010
+      TinyRanch_MapDecorations_3: -101889539
+      TinyRanch_MapDecorations_30: -818227237
+      TinyRanch_MapDecorations_31: 95819550
+      TinyRanch_MapDecorations_32: 1312697725
+      TinyRanch_MapDecorations_33: 1132091116
+      TinyRanch_MapDecorations_34: -1069548187
+      TinyRanch_MapDecorations_35: -323056542
+      TinyRanch_MapDecorations_36: 160993490
+      TinyRanch_MapDecorations_37: -541183665
+      TinyRanch_MapDecorations_38: 595000189
+      TinyRanch_MapDecorations_39: -407750376
+      TinyRanch_MapDecorations_4: -470672258
+      TinyRanch_MapDecorations_40: -2107507657
+      TinyRanch_MapDecorations_41: -1139010610
+      TinyRanch_MapDecorations_42: 399990011
+      TinyRanch_MapDecorations_43: 1742231401
+      TinyRanch_MapDecorations_44: 804220592
+      TinyRanch_MapDecorations_45: -646447652
+      TinyRanch_MapDecorations_46: -953381758
+      TinyRanch_MapDecorations_47: 1268145707
+      TinyRanch_MapDecorations_5: -1346645079
+      TinyRanch_MapDecorations_6: 1695522052
+      TinyRanch_MapDecorations_7: 106351542
+      TinyRanch_MapDecorations_8: 1630437926
+      TinyRanch_MapDecorations_9: -769368660
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

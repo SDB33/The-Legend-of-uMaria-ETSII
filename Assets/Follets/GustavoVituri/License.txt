@@ -1,0 +1,18 @@
+Los sprites utilizados en este proyecto fueron creados por Gustavo Vituri.
+Han sido descargados desde sus perfiles públicos y se usan conforme a los términos indicados por el autor: uso libre sin restricciones.
+Agradezco profundamente su generosidad al compartir estos recursos.
+Este uso es temporal y con fines de prototipo/experimentación. 
+
+Puedes seguir el trabajo de Gustavo Vituri en:
+🎨 Behance  https://www.behance.net/gustavovituri/appreciated
+🎮 Itch.io  https://itch.io/profile/gvituri
+
+English 🇺🇸
+The sprites used in this project were created by Gustavo Vituri.
+They were downloaded from his public profiles and are being used under the terms provided by the author: free use without restrictions.
+I'm deeply grateful for his generosity in sharing these resources.
+This is a temporary use for prototyping/experimental purposes.
+
+You can follow Gustavo Vituri's work at:
+🎨 Behance  https://www.behance.net/gustavovituri/appreciated
+🎮 Itch.io  https://itch.io/profile/gvituri

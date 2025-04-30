@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697863176745949242}
+  - component: {fileID: -959784075827366930}
   - component: {fileID: 3949893711460731950}
   - component: {fileID: 680622737306475134}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: MonExterior_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,6 +34,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-959784075827366930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689364830526178726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c98599f59c708458c034ed933ba0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &3949893711460731950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,10 +87,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -889637819
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c711ab3d9051fef469a9668e3c3b6260, type: 2}
+  m_Sprite: {fileID: -5728739860231810600, guid: 4a963464f76c0934c93097ac41a26315, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

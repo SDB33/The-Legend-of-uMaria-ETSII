@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Entitat
+    uniqueID: 3405329477
+    locked: 0
   - name: UI
     uniqueID: 3980503981
     locked: 0
