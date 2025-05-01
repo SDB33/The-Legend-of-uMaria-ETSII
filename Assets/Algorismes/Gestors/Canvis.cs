@@ -114,9 +114,15 @@ public class ArrayCircular {
         index = (index + 1) % accions.Length; 
     }
 
+    public void CopiarActius(Dictionary<GameObject, int> desti) {
+        foreach (KeyValuePair<GameObject, int> parella in referenciats) {
+            if (parella.Key.activeSelf) { desti.Add(parella.Key, 0); }
+        }
+    }
+
 }
 
-public static class Canvis  {
+public static class Canvis {
 
     private static Dictionary<GameObject, int> objectes;
 
@@ -127,15 +133,14 @@ public static class Canvis  {
         accions = new ArrayCircular(20);
     }
 
-    public static void introduir(Executable accio) {
-        accions.introduir(accio);
-    }
+    public static void introduir(Executable accio) { accions.introduir(accio); }
+    public static void Desfer() { accions.Desfer(); }
+    public static void Refer() { accions.Refer(); }
 
-    public static void Desfer() { 
-        accions.Desfer();
-    }
-    public static void Refer() { 
-        accions.Refer();
+    public static void DesarContingut() {
+        objectes.Clear();
+        accions.CopiarActius(objectes);
+
     }
 
 }
