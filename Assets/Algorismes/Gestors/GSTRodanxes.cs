@@ -27,7 +27,7 @@ public class GSTRodanxes : MonoBehaviour {
 
     public int divisor;
 
-    public Dictionary<string, GameObject> Magatzem;
+    public static Dictionary<string, GameObject> Magatzem;
 
     public ModeDeu Thopasso;
 
@@ -62,9 +62,9 @@ public class GSTRodanxes : MonoBehaviour {
         for (int i=0; i<efimer.Length;i++) { efimer[i] = mares[i]; }
         mares = efimer;
 
-        contenidor.localPosition =  new Vector3 (1611.617f, contenidor.localPosition.y, contenidor.localPosition.z); 
-        OnSoc=3f;
-        OnVaig=3f;
+        contenidor.localPosition = new Vector3 (0f, contenidor.localPosition.y, contenidor.localPosition.z); 
+        OnSoc = 3f;
+        OnVaig = 3f;
         mares[3].transform.localScale = new Vector3(1.3f,1.3f,0f);
         for (int k = 0; k < mares[3].transform.childCount-1; k++) { mares[3].transform.GetChild(k).GetComponent<Button>().interactable=true; } 
     }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Diagnostics;
 
 public interface Executable {
     public void aplicar();
@@ -102,6 +104,10 @@ public class ArrayCircular {
         }
     }
 
+    public void Rebutjar() {
+        foreach (KeyValuePair<GameObject, int> objecte in referenciats) { Object.Destroy(objecte.Key); }
+    }
+
 
     public void Desfer() { 
         if (index == inici) {return;}  
@@ -120,6 +126,12 @@ public class ArrayCircular {
         }
     }
 
+    public void CopiarActius(ObjecteDadesList desti) {
+        foreach (KeyValuePair<GameObject, int> parella in referenciats) {
+            if (parella.Key.activeSelf) { desti.objectes.Add(new ObjecteDades { nom = parella.Key.name, posicio = parella.Key.transform.position }); }
+        }
+    }
+
 }
 
 public static class Canvis {
@@ -128,7 +140,9 @@ public static class Canvis {
 
     private static ArrayCircular accions;
 
-    static Canvis() {
+    static Canvis() { Reiniciar(); }
+
+    public static void Reiniciar() {
         objectes = new Dictionary<GameObject, int>();
         accions = new ArrayCircular(20);
     }
@@ -138,9 +152,38 @@ public static class Canvis {
     public static void Refer() { accions.Refer(); }
 
     public static void DesarContingut() {
-        objectes.Clear();
-        accions.CopiarActius(objectes);
-
+        ObjecteDadesList PerAlSac = new ObjecteDadesList();
+        accions.CopiarActius(PerAlSac);
+        string json = JsonUtility.ToJson(PerAlSac);
+        File.WriteAllText(Application.persistentDataPath + "/objectes.json", json);
     }
 
+    public static void CarregarContingut() {
+        string path = Application.persistentDataPath + "/objectes.json";
+        if (!File.Exists(path)) { return; }
+        string json = File.ReadAllText(path);
+
+        accions.Rebutjar();
+        Reiniciar();
+
+        crearIDestruirObjecte cons =  new crearIDestruirObjecte();
+        foreach (ObjecteDades dades in JsonUtility.FromJson<ObjecteDadesList>(json).objectes) {
+            GameObject nou = Object.Instantiate(GSTRodanxes.Magatzem[dades.nom], dades.posicio, Quaternion.identity);
+            nou.name = dades.nom;
+            cons.ModificaM.Add(nou);
+        } 
+        if (cons.ModificaM.Count!=0) { introduir(cons); }
+    }
+
+}
+
+[System.Serializable]
+public class ObjecteDadesList {
+    public List<ObjecteDades> objectes = new List<ObjecteDades>();
+}
+
+[System.Serializable]
+public class ObjecteDades {
+    public string nom;
+    public Vector3 posicio;
 }

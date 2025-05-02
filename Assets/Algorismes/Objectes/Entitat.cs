@@ -5,9 +5,7 @@ public class Entitat : MonoBehaviour {
     public static Vector3 posRatoli;
 
     public static bool pucMourem;
-    
-    void Start () { OnMouseDown(); }
-    
+        
     public IEnumerator MouMe()  {
         Vector3 posIni = transform.position; 
         while (pucMourem) { 

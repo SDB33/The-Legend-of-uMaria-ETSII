@@ -34,12 +34,15 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         while (estiConstruint) {
             RaycastHit2D cop = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,Mathf.Infinity, 1 << objecte.layer);
             if (cop.collider!=null) {
-                if (cop.collider.gameObject.name == objecte.name + "(Clone)" ) {yield return new WaitForSeconds(.001f); continue;}
+                if (cop.collider.gameObject.name == objecte.name) {yield return new WaitForSeconds(.001f); continue;}
                 cop.collider.gameObject.SetActive(false);  
                 accions.DesactivaM.Add(cop.collider.gameObject);  
             }
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            accions.ModificaM.Add( Instantiate(objecte,new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f ), Quaternion.identity) );
+            GameObject nou =  Instantiate(objecte,new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),0f ), Quaternion.identity);
+            nou.name = objecte.name;
+            accions.ModificaM.Add(nou);
+            
             yield return new WaitForSeconds(.001f);
         }
         if (accions.ModificaM.Count!=0) { Canvis.introduir(accions); }
@@ -50,7 +53,10 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         estiConstruint = true;
         crearIDestruirObjecte accions =  new crearIDestruirObjecte();
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        accions.ModificaM.Add( Instantiate(objecte,new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),-1f ), Quaternion.identity) );
+        GameObject nou = Instantiate(objecte,new Vector3(0.5f+Mathf.Floor(worldPosition.x),0.5f+Mathf.Floor(worldPosition.y),-1f ), Quaternion.identity);
+        nou.name = objecte.name;
+        nou.GetComponent<Entitat>().OnMouseDown();
+        accions.ModificaM.Add(nou);
         Canvis.introduir(accions);
         while (estiConstruint) { yield return new WaitForSeconds(.001f); }
     }
@@ -79,5 +85,15 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     public void Desfer (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint) { Canvis.Desfer(); } }
     public void Refer (InputAction.CallbackContext canvi)  { if (canvi.performed && !estiConstruint) { Canvis.Refer();  } }
 
+
+    // void Update () {
+
+    //     if (Input.GetKeyDown(KeyCode.W)) {
+    //         Canvis.DesarContingut();
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.I)) {
+    //         Canvis.CarregarContingut();
+    //     }
+    // }
 
 }
