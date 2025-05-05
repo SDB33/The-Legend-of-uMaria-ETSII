@@ -633,6 +633,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Desar"",
+                    ""type"": ""Button"",
+                    ""id"": ""f45dc34d-146b-4611-b4d3-af11a4806e27"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Carregar"",
+                    ""type"": ""Button"",
+                    ""id"": ""d0404cfe-3926-4507-a4f9-d27c5d0213f3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -756,6 +774,72 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Refer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""724ace0f-aa9f-4fce-a409-ec3e822a82db"",
+                    ""path"": ""OneModifier(modifiersOrder=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Desar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""a9ea26a2-3aa7-4334-a86e-84b827ba092a"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Desar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""dffa9642-aec0-4055-970c-07acdca75ec6"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Desar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""ee614fb6-7435-4725-88de-7547bd4af912"",
+                    ""path"": ""OneModifier(modifiersOrder=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carregar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""2d95744c-5300-4394-839d-ba004a9ce735"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carregar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""f6452be9-bc07-4f38-9554-40f3c79e8f7f"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carregar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -840,6 +924,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Prometeu_MouCam = m_Prometeu.FindAction("MouCam", throwIfNotFound: true);
         m_Prometeu_Desfer = m_Prometeu.FindAction("Desfer", throwIfNotFound: true);
         m_Prometeu_Refer = m_Prometeu.FindAction("Refer", throwIfNotFound: true);
+        m_Prometeu_Desar = m_Prometeu.FindAction("Desar", throwIfNotFound: true);
+        m_Prometeu_Carregar = m_Prometeu.FindAction("Carregar", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1119,6 +1205,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Prometeu_MouCam;
     private readonly InputAction m_Prometeu_Desfer;
     private readonly InputAction m_Prometeu_Refer;
+    private readonly InputAction m_Prometeu_Desar;
+    private readonly InputAction m_Prometeu_Carregar;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
     /// </summary>
@@ -1142,6 +1230,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Prometeu/Refer".
         /// </summary>
         public InputAction @Refer => m_Wrapper.m_Prometeu_Refer;
+        /// <summary>
+        /// Provides access to the underlying input action "Prometeu/Desar".
+        /// </summary>
+        public InputAction @Desar => m_Wrapper.m_Prometeu_Desar;
+        /// <summary>
+        /// Provides access to the underlying input action "Prometeu/Carregar".
+        /// </summary>
+        public InputAction @Carregar => m_Wrapper.m_Prometeu_Carregar;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1177,6 +1273,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Refer.started += instance.OnRefer;
             @Refer.performed += instance.OnRefer;
             @Refer.canceled += instance.OnRefer;
+            @Desar.started += instance.OnDesar;
+            @Desar.performed += instance.OnDesar;
+            @Desar.canceled += instance.OnDesar;
+            @Carregar.started += instance.OnCarregar;
+            @Carregar.performed += instance.OnCarregar;
+            @Carregar.canceled += instance.OnCarregar;
         }
 
         /// <summary>
@@ -1197,6 +1299,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Refer.started -= instance.OnRefer;
             @Refer.performed -= instance.OnRefer;
             @Refer.canceled -= instance.OnRefer;
+            @Desar.started -= instance.OnDesar;
+            @Desar.performed -= instance.OnDesar;
+            @Desar.canceled -= instance.OnDesar;
+            @Carregar.started -= instance.OnCarregar;
+            @Carregar.performed -= instance.OnCarregar;
+            @Carregar.canceled -= instance.OnCarregar;
         }
 
         /// <summary>
@@ -1401,5 +1509,19 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRefer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Desar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDesar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Carregar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCarregar(InputAction.CallbackContext context);
     }
 }

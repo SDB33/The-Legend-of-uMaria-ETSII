@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System.Diagnostics;
+using System.Windows.Forms;
 
 public interface Executable {
     public void aplicar();
@@ -155,13 +155,28 @@ public static class Canvis {
         ObjecteDadesList PerAlSac = new ObjecteDadesList();
         accions.CopiarActius(PerAlSac);
         string json = JsonUtility.ToJson(PerAlSac);
-        File.WriteAllText(Application.persistentDataPath + "/objectes.json", json);
+        string ubicacio = string.Empty;
+        
+    #if UNITY_STANDALONE_WIN
+            ubicacio = DesaALaFinestra();
+    #else
+            Debug.LogWarning("Guardar JSON ahora solo está disponible en Windows.");
+    #endif
+        
+        if (ubicacio == string.Empty) { return;}
+        
+        File.WriteAllText(ubicacio, json);
     }
 
     public static void CarregarContingut() {
-        string path = Application.persistentDataPath + "/objectes.json";
-        if (!File.Exists(path)) { return; }
-        string json = File.ReadAllText(path);
+        string ubicacio = string.Empty;
+    #if UNITY_STANDALONE_WIN
+            ubicacio = CarregaALaFinestra();
+    #else
+            Debug.LogWarning("Cargar JSON ahora solo está disponible en Windows.");
+    #endif
+        if (ubicacio == string.Empty) { return;}
+        string json = File.ReadAllText(ubicacio);
 
         accions.Rebutjar();
         Reiniciar();
@@ -174,6 +189,28 @@ public static class Canvis {
         } 
         if (cons.ModificaM.Count!=0) { introduir(cons); }
     }
+
+    private static string CarregaALaFinestra() {
+        OpenFileDialog dialeg = new OpenFileDialog();
+        dialeg.Title = "Selecciona un archivo";
+        dialeg.Filter = "Archivos JSON (*.json)|*.json"; 
+
+        if (dialeg.ShowDialog() == DialogResult.OK) { return dialeg.FileName; }
+        return string.Empty;  
+    }
+
+    private static string DesaALaFinestra() {
+        SaveFileDialog dialeg = new SaveFileDialog();
+        dialeg.Title = "Guardar archivo JSON";
+        dialeg.Filter = "Archivos JSON (*.json)|*.json";
+        dialeg.DefaultExt = "json";
+        dialeg.AddExtension = true;
+        dialeg.FileName = "datos.json"; 
+        dialeg.OverwritePrompt = true;  
+
+        if (dialeg.ShowDialog() == DialogResult.OK) { return dialeg.FileName; }
+        return string.Empty;
+    } 
 
 }
 

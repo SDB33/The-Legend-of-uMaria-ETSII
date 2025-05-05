@@ -84,16 +84,8 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
     public void Desfer (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint) { Canvis.Desfer(); } }
     public void Refer (InputAction.CallbackContext canvi)  { if (canvi.performed && !estiConstruint) { Canvis.Refer();  } }
+    public void Desar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint) { Canvis.DesarContingut(); } }
+    public void Carregar (InputAction.CallbackContext canvi)  { if (canvi.performed && !estiConstruint) { Canvis.CarregarContingut(); } }
 
-
-    // void Update () {
-
-    //     if (Input.GetKeyDown(KeyCode.W)) {
-    //         Canvis.DesarContingut();
-    //     }
-    //     if (Input.GetKeyDown(KeyCode.I)) {
-    //         Canvis.CarregarContingut();
-    //     }
-    // }
 
 }
