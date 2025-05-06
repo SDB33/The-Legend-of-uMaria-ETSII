@@ -244,7 +244,7 @@ public class GSTRodanxes : MonoBehaviour {
     }
 
     public void QuantMouCam (InputAction.CallbackContext canvi) {
-        if (!vasAcabar || !canvi.performed || transform.parent.localScale.x!=0) {return;} //Este  transform.parent.localScale.x!=0 es porque eso representa cuando está puesto el menú, hay que cambiarlo si se cambia la condicion del menu
+        if (!vasAcabar || !canvi.performed || EsticAlMenu() ) {return;}
         StartCoroutine( ActualitzarSaltador( canvi.ReadValue<Vector2>() ) ); 
     }
 
@@ -259,6 +259,24 @@ public class GSTRodanxes : MonoBehaviour {
         }   
         Camera.main.transform.position = CamPassada;
         vasAcabar = true;  
+    }
+
+    public bool EsticAlMenu() { return transform.parent.localScale.x!=0; }
+
+    [SerializeField] private RectTransform[] temorencs;
+    [SerializeField] private bool[] estaFicat;
+
+    public void PicaParet() { for(int i=0; i<temorencs.Length; i++) { if (!estaFicat[i]) { BotoPoruc(temorencs[i]); estaFicat[i] = !estaFicat[i]; } } }
+
+    public void BotoPoruc(RectTransform rt) {
+        Vector2 posPantalla = RectTransformUtility.WorldToScreenPoint(Camera.main, rt.position);
+        Vector2 desplacament = posPantalla - new Vector2(Screen.width, Screen.height) / 2f;
+        int factor = posPantalla.x < 0 || posPantalla.x > Screen.width || posPantalla.y < 0 || posPantalla.y > Screen.height ? 1 : -1;
+        
+        if (Mathf.Abs(desplacament.x) > Mathf.Abs(desplacament.y)) { rt.anchoredPosition += new Vector2(factor * 2 * rt.rect.x * (desplacament.x > 0 ? 1 : -1), 0f); } // 0 = dalt, 1 = dreta, 2 = baix, 3 = esquerra
+        else                                                       { rt.anchoredPosition += new Vector2(0f, factor * 2 * rt.rect.y * (desplacament.y > 0 ? 1 : -1)); }
+
+        for (int i = 0; i < temorencs.Length; i++) { if (temorencs[i] == rt) { estaFicat[i] = !estaFicat[i]; break; } }
     }
 
 

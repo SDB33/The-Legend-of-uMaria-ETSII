@@ -280,7 +280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 141913786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e64988af0ece88e45a1e85e399eb84ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -314,7 +314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 141913789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 381311759}
+        m_TargetAssemblyTypeName: GSTRodanxes, Assembly-CSharp
+        m_MethodName: BotoPoruc
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1184135226}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &164808343
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +866,11 @@ MonoBehaviour:
   esCanviant: 0
   VeloCam: 80
   vasAcabar: 1
+  temorencs:
+  - {fileID: 1184135226}
+  - {fileID: 1497045324}
+  - {fileID: 953184960}
+  estaFicat: 000000
 --- !u!114 &381311760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,7 +1608,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1501871396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e64988af0ece88e45a1e85e399eb84ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1625,7 +1642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1501871399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 381311759}
+        m_TargetAssemblyTypeName: GSTRodanxes, Assembly-CSharp
+        m_MethodName: BotoPoruc
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1497045324}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1663753510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objecte: {fileID: 0}
+  rodanxes: {fileID: 381311759}
 --- !u!114 &1663753513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1979,7 +2009,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1814298664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e64988af0ece88e45a1e85e399eb84ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -2013,7 +2043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1814298667}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 381311759}
+        m_TargetAssemblyTypeName: GSTRodanxes, Assembly-CSharp
+        m_MethodName: BotoPoruc
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 953184960}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1864761890
 GameObject:
   m_ObjectHideFlags: 0

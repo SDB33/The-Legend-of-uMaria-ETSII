@@ -7,15 +7,17 @@ using System.Collections;
 
 public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     
-    public GameObject objecte;
+    [HideInInspector] public GameObject objecte;
 
     private bool esticDestruint, estiConstruint;
-    // Si al final lo hago con tilemap, se puede ver si el ratón está tocando un objeto y, si no, que mire el tilemap y para mover piezas del tilemap, se podría habilitar un gameobject que es el que realmente
-    // se movera y donde se ponga se destruye el tile anterior para poner el nuevo
+
+    [SerializeField] private GSTRodanxes rodanxes;
+
     void Start() { Application.targetFrameRate = 60; } // borrar esto y ponerlo en algún archivo de configuracio 
 
     public void OnPointerDown(PointerEventData dades) {
-        if (estiConstruint || esticDestruint) {return;}
+        if (estiConstruint || esticDestruint || dades.button == PointerEventData.InputButton.Middle) {return;} 
+        rodanxes.PicaParet();
         if (dades.button == PointerEventData.InputButton.Left && objecte != null) {
             if (objecte.GetComponent<Entitat>() != null) { StartCoroutine(ConstruirEntitat()); }
             else                                         { StartCoroutine(ConstruirTerreny()); }
@@ -23,6 +25,8 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         else if (dades.button == PointerEventData.InputButton.Right) { StartCoroutine(Destruir());  }
     }
     public void OnPointerUp(PointerEventData dades) {
+        if (dades.button == PointerEventData.InputButton.Middle) {return;}
+        rodanxes.PicaParet();
         if      (dades.button == PointerEventData.InputButton.Left)   { Entitat.pucMourem = false; estiConstruint = false; } // Solución muy muy cutre. Esto es para objetos como Entitat que se construyen antes y como no les has dado click, no llaman a OnMouseDown ni OnMouseUp
         else if (dades.button == PointerEventData.InputButton.Right)  {                            esticDestruint = false; }
     }
@@ -82,10 +86,10 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         if (accions.DesactivaM.Count!=0) { Canvis.introduir(accions); }  
     }
 
-    public void Desfer (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint) { Canvis.Desfer(); } }
-    public void Refer (InputAction.CallbackContext canvi)  { if (canvi.performed && !estiConstruint) { Canvis.Refer();  } }
-    public void Desar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint) { Canvis.DesarContingut(); } }
-    public void Carregar (InputAction.CallbackContext canvi)  { if (canvi.performed && !estiConstruint) { Canvis.CarregarContingut(); } }
+    public void Desfer   (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.Desfer();            } }
+    public void Refer    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.Refer();             } }
+    public void Desar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.DesarContingut();    } }
+    public void Carregar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.CarregarContingut(); } }
 
 
 }
