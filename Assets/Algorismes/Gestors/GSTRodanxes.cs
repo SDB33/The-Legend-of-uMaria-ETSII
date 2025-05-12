@@ -44,6 +44,8 @@ public class GSTRodanxes : MonoBehaviour {
 
     [SerializeField] private float VeloCam;
     [SerializeField] private bool vasAcabar;
+    [SerializeField] private RectTransform[] temorencs;
+    [SerializeField] private bool[] estaFicat;
 
     void Start() {
         BotoSelecArross.cap=this;
@@ -262,10 +264,6 @@ public class GSTRodanxes : MonoBehaviour {
     }
 
     public bool EsticAlMenu() { return transform.parent.localScale.x!=0; }
-
-    [SerializeField] private RectTransform[] temorencs;
-    [SerializeField] private bool[] estaFicat;
-
     public void PicaParet() { for(int i=0; i<temorencs.Length; i++) { if (!estaFicat[i]) { BotoPoruc(temorencs[i]); estaFicat[i] = !estaFicat[i]; } } }
 
     public void BotoPoruc(RectTransform rt) {
