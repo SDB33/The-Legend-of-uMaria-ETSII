@@ -91,5 +91,4 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     public void Desar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.DesarContingut();    } }
     public void Carregar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.CarregarContingut(); } }
 
-
 }

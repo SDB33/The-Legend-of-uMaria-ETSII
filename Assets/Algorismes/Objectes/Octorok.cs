@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Octorok : MonoBehaviour {
+public class Octorok : MonoBehaviour, IReiniciable {
     public float velocitat;
     public float tempsMinimCanvi;
     public float tempsMaximCanvi;
@@ -12,6 +12,10 @@ public class Octorok : MonoBehaviour {
     public Sprite[] follets; // creo que esto se podria hacer static ya que va a ser la misma referencia para todos los objetos
     private SpriteRenderer spriteRenderer;
     private bool becCurt;
+
+    public void RestablirEstat() {
+        
+    }
 
     void Start() {
         cosRigida = GetComponent<Rigidbody2D>();
@@ -70,4 +74,6 @@ public class Octorok : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D colisio) { TriarNovaDireccio(); }
+
+
 }

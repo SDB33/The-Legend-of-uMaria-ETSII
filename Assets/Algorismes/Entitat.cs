@@ -40,7 +40,6 @@ public class Entitat : MonoBehaviour {
         }
 
         if (posIni!=transform.position) { Canvis.introduir(accio); }
-        //Canvis.introduir(accio); 
     }
 
 }
