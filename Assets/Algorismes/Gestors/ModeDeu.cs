@@ -13,7 +13,16 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
     [SerializeField] private GSTRodanxes rodanxes;
 
-    void Start() { Application.targetFrameRate = 60; } // borrar esto y ponerlo en algún archivo de configuracio 
+    private ArrayCircular historial;
+    private Fitxers arxiu;
+
+    void Start() {
+        Application.targetFrameRate = 60;  // borrar esto y ponerlo en algún archivo de configuracion
+        historial = new ArrayCircular(20);
+        arxiu = new Fitxers();
+
+        Entitat.modeDeu = this;
+    }  
 
     public void OnPointerDown(PointerEventData dades) {
         if (estiConstruint || esticDestruint || dades.button == PointerEventData.InputButton.Middle) {return;} 
@@ -49,7 +58,7 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
             
             yield return new WaitForSeconds(.001f);
         }
-        if (accions.ModificaM.Count!=0) { Canvis.introduir(accions); }
+        if (accions.ModificaM.Count!=0) { historial.introduir(accions);  }
     }
 
     private IEnumerator ConstruirEntitat() {
@@ -61,7 +70,7 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         nou.name = objecte.name;
         nou.GetComponent<Entitat>().OnMouseDown();
         accions.ModificaM.Add(nou);
-        Canvis.introduir(accions);
+        historial.introduir(accions);
         while (estiConstruint) { yield return new WaitForSeconds(.001f); }
     }
 
@@ -83,12 +92,15 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
             }
             yield return new WaitForSeconds(.001f);
         }
-        if (accions.DesactivaM.Count!=0) { Canvis.introduir(accions); }  
+        if (accions.DesactivaM.Count!=0) { historial.introduir(accions); }  
     }
 
-    public void Desfer   (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.Desfer();            } }
-    public void Refer    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.Refer();             } }
-    public void Desar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.DesarContingut();    } }
-    public void Carregar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { Canvis.CarregarContingut(); } }
+    public void Desfer   (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { historial.Desfer();                   } }
+    public void Refer    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { historial.Refer();                    } }
+    public void Desar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { arxiu.DesarContingut(historial);      } }
+    public void Carregar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { arxiu.CarregarContingut(historial);   } }
+    public void Jugar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) {                        } }
+    
 
+    public void Introduir(Executable accio) { historial.introduir(accio); }
 }

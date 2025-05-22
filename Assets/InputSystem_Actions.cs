@@ -651,6 +651,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jugar"",
+                    ""type"": ""Button"",
+                    ""id"": ""1bab78d5-4108-410b-89cd-648b3d65b5dd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -840,6 +849,39 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Carregar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""05fa860c-aea5-4c9f-b27a-50d61302eb0b"",
+                    ""path"": ""OneModifier(modifiersOrder=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jugar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""5c81fb78-b601-4bcb-a031-c7f980aedf73"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jugar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""71c244a5-fbce-46b6-ad07-23dd9c4d9106"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jugar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -926,6 +968,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Prometeu_Refer = m_Prometeu.FindAction("Refer", throwIfNotFound: true);
         m_Prometeu_Desar = m_Prometeu.FindAction("Desar", throwIfNotFound: true);
         m_Prometeu_Carregar = m_Prometeu.FindAction("Carregar", throwIfNotFound: true);
+        m_Prometeu_Jugar = m_Prometeu.FindAction("Jugar", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1207,6 +1250,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Prometeu_Refer;
     private readonly InputAction m_Prometeu_Desar;
     private readonly InputAction m_Prometeu_Carregar;
+    private readonly InputAction m_Prometeu_Jugar;
     /// <summary>
     /// Provides access to input actions defined in input action map "Prometeu".
     /// </summary>
@@ -1238,6 +1282,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Prometeu/Carregar".
         /// </summary>
         public InputAction @Carregar => m_Wrapper.m_Prometeu_Carregar;
+        /// <summary>
+        /// Provides access to the underlying input action "Prometeu/Jugar".
+        /// </summary>
+        public InputAction @Jugar => m_Wrapper.m_Prometeu_Jugar;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1279,6 +1327,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Carregar.started += instance.OnCarregar;
             @Carregar.performed += instance.OnCarregar;
             @Carregar.canceled += instance.OnCarregar;
+            @Jugar.started += instance.OnJugar;
+            @Jugar.performed += instance.OnJugar;
+            @Jugar.canceled += instance.OnJugar;
         }
 
         /// <summary>
@@ -1305,6 +1356,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Carregar.started -= instance.OnCarregar;
             @Carregar.performed -= instance.OnCarregar;
             @Carregar.canceled -= instance.OnCarregar;
+            @Jugar.started -= instance.OnJugar;
+            @Jugar.performed -= instance.OnJugar;
+            @Jugar.canceled -= instance.OnJugar;
         }
 
         /// <summary>
@@ -1523,5 +1577,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCarregar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Jugar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnJugar(InputAction.CallbackContext context);
     }
 }

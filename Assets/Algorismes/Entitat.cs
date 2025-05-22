@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Entitat : MonoBehaviour {
     public static Vector3 posRatoli;
-
+    public static ModeDeu modeDeu;
     public static bool pucMourem;
         
     public IEnumerator MouMe()  {
@@ -39,7 +39,7 @@ public class Entitat : MonoBehaviour {
             } 
         }
 
-        if (posIni!=transform.position) { Canvis.introduir(accio); }
+        if (posIni!=transform.position) { modeDeu.Introduir(accio); }
     }
 
 }

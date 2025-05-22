@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using UnityEngine;
 using System.IO;
 
-
 [System.Serializable]
 public class ObjecteDadesList {
     public List<ObjecteDades> objectes = new List<ObjecteDades>();
@@ -17,9 +16,9 @@ public class ObjecteDades {
 
 public class Fitxers {
 
-    public void DesarContingut() {
+    public void DesarContingut(ArrayCircular historial) {
         ObjecteDadesList PerAlSac = new ObjecteDadesList();
-        Canvis.CopiarActius(PerAlSac);
+        historial.CopiarActius(PerAlSac);
         string json = JsonUtility.ToJson(PerAlSac);
         string ubicacio = string.Empty;
         
@@ -34,7 +33,7 @@ public class Fitxers {
         File.WriteAllText(ubicacio, json);
     }
 
-    public void CarregarContingut() {
+    public void CarregarContingut(ArrayCircular historial) {
         string ubicacio = string.Empty;
     #if UNITY_STANDALONE_WIN
             ubicacio = CarregaALaFinestra();
@@ -44,8 +43,7 @@ public class Fitxers {
         if (ubicacio == string.Empty) { return; }
         string json = File.ReadAllText(ubicacio);
 
-        Canvis.Rebutjar();
-        Canvis.Reiniciar();
+        historial.Netejar();
 
         crearIDestruirObjecte cons =  new crearIDestruirObjecte();
         foreach (ObjecteDades dades in JsonUtility.FromJson<ObjecteDadesList>(json).objectes) {
@@ -53,7 +51,7 @@ public class Fitxers {
             nou.name = dades.nom;
             cons.ModificaM.Add(nou);
         } 
-        if (cons.ModificaM.Count!=0) { Canvis.introduir(cons); }
+        if (cons.ModificaM.Count!=0) { historial.introduir(cons); }
     }
 
     private string CarregaALaFinestra() {

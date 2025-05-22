@@ -70,5 +70,14 @@ public class ArrayCircular {
             if (parella.Key.activeSelf) { desti.objectes.Add(new ObjecteDades { nom = parella.Key.name, posicio = parella.Key.transform.position }); }
         }
     }
+    
+    public void Netejar() {
+        Rebutjar();
+        referenciats.Clear();
+        for (int i = 0; i < accions.Length; i++) { accions[i] = null; }
+        inici = 0;
+        fi = 0;
+        index = 0;
+    }
 
 }
