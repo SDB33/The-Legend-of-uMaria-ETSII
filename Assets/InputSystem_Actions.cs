@@ -884,6 +884,56 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Atena"",
+            ""id"": ""7e244028-e79a-43ef-a18a-a39093b93bdc"",
+            ""actions"": [
+                {
+                    ""name"": ""Editar"",
+                    ""type"": ""Button"",
+                    ""id"": ""1f52908e-1d8f-4221-af8d-1e1e69bc29f6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""5c96e887-965c-46f2-8e45-ca3ef2f7c756"",
+                    ""path"": ""OneModifier(modifiersOrder=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Editar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""488c73e3-d95e-4b47-87a5-8e255ab668cd"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Editar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""197dcc06-9f04-44c0-9024-49c52554dc08"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Editar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -969,12 +1019,16 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Prometeu_Desar = m_Prometeu.FindAction("Desar", throwIfNotFound: true);
         m_Prometeu_Carregar = m_Prometeu.FindAction("Carregar", throwIfNotFound: true);
         m_Prometeu_Jugar = m_Prometeu.FindAction("Jugar", throwIfNotFound: true);
+        // Atena
+        m_Atena = asset.FindActionMap("Atena", throwIfNotFound: true);
+        m_Atena_Editar = m_Atena.FindAction("Editar", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Prometeu.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Prometeu.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Atena.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Atena.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1392,6 +1446,102 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="PrometeuActions" /> instance referencing this action map.
     /// </summary>
     public PrometeuActions @Prometeu => new PrometeuActions(this);
+
+    // Atena
+    private readonly InputActionMap m_Atena;
+    private List<IAtenaActions> m_AtenaActionsCallbackInterfaces = new List<IAtenaActions>();
+    private readonly InputAction m_Atena_Editar;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Atena".
+    /// </summary>
+    public struct AtenaActions
+    {
+        private @InputSystem_Actions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public AtenaActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Atena/Editar".
+        /// </summary>
+        public InputAction @Editar => m_Wrapper.m_Atena_Editar;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Atena; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="AtenaActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(AtenaActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="AtenaActions" />
+        public void AddCallbacks(IAtenaActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AtenaActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AtenaActionsCallbackInterfaces.Add(instance);
+            @Editar.started += instance.OnEditar;
+            @Editar.performed += instance.OnEditar;
+            @Editar.canceled += instance.OnEditar;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="AtenaActions" />
+        private void UnregisterCallbacks(IAtenaActions instance)
+        {
+            @Editar.started -= instance.OnEditar;
+            @Editar.performed -= instance.OnEditar;
+            @Editar.canceled -= instance.OnEditar;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="AtenaActions.UnregisterCallbacks(IAtenaActions)" />.
+        /// </summary>
+        /// <seealso cref="AtenaActions.UnregisterCallbacks(IAtenaActions)" />
+        public void RemoveCallbacks(IAtenaActions instance)
+        {
+            if (m_Wrapper.m_AtenaActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="AtenaActions.AddCallbacks(IAtenaActions)" />
+        /// <seealso cref="AtenaActions.RemoveCallbacks(IAtenaActions)" />
+        /// <seealso cref="AtenaActions.UnregisterCallbacks(IAtenaActions)" />
+        public void SetCallbacks(IAtenaActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AtenaActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AtenaActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="AtenaActions" /> instance referencing this action map.
+    /// </summary>
+    public AtenaActions @Atena => new AtenaActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1584,5 +1734,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJugar(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Atena" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="AtenaActions.AddCallbacks(IAtenaActions)" />
+    /// <seealso cref="AtenaActions.RemoveCallbacks(IAtenaActions)" />
+    public interface IAtenaActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Editar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEditar(InputAction.CallbackContext context);
     }
 }

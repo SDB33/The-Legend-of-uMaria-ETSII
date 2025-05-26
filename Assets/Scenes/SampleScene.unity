@@ -1421,6 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400081000ec0f1e4c97035f763772278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rodanxes: {fileID: 381311759}
 --- !u!50 &674002744
 Rigidbody2D:
   serializedVersion: 5
@@ -1448,6 +1449,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &910470242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910470243}
+  m_Layer: 0
+  m_Name: Link
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910470243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910470242}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.92313, y: 7.3879795, z: -0.18439887}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &953184959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,6 +2197,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1bab78d5-4108-410b-89cd-648b3d65b5dd
     m_ActionName: 'Prometeu/Jugar[/Keyboard/ctrl,/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 674002743}
+        m_TargetAssemblyTypeName: ModeJoc, Assembly-CSharp
+        m_MethodName: Editar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f52908e-1d8f-4221-af8d-1e1e69bc29f6
+    m_ActionName: 'Atena/Editar[/Keyboard/ctrl,/Keyboard/enter]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Prometeu
@@ -3115,3 +3163,4 @@ SceneRoots:
   - {fileID: 1995368061}
   - {fileID: 1672446475}
   - {fileID: 191484604}
+  - {fileID: 910470243}

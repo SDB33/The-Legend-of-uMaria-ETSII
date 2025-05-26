@@ -798,6 +798,56 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Atena",
+            "id": "7e244028-e79a-43ef-a18a-a39093b93bdc",
+            "actions": [
+                {
+                    "name": "Editar",
+                    "type": "Button",
+                    "id": "1f52908e-1d8f-4221-af8d-1e1e69bc29f6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "One Modifier",
+                    "id": "5c96e887-965c-46f2-8e45-ca3ef2f7c756",
+                    "path": "OneModifier(modifiersOrder=1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Editar",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "488c73e3-d95e-4b47-87a5-8e255ab668cd",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Editar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "197dcc06-9f04-44c0-9024-49c52554dc08",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Editar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         }
     ],
     "controlSchemes": [

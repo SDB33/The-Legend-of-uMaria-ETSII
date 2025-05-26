@@ -36,19 +36,16 @@ public class crearIDestruirObjecte : Executable {
     public IList<GameObject> ModificaM { get; }
     public IList<GameObject> DesactivaM { get; }
 
-    public crearIDestruirObjecte()
-    {
+    public crearIDestruirObjecte() {
         ModificaM = new List<GameObject>();
         DesactivaM = new List<GameObject>();
     }
 
-    public void aplicar()
-    {
+    public void aplicar() {
         foreach (GameObject desactivat in DesactivaM) { desactivat.SetActive(false); }
         foreach (GameObject construit in ModificaM) { construit.SetActive(true); }
     }
-    public void revertir()
-    {
+    public void revertir() {
         foreach (GameObject construit in ModificaM) { construit.SetActive(false); }
         foreach (GameObject desactivat in DesactivaM) { desactivat.SetActive(true); }
     }
@@ -57,5 +54,6 @@ public class crearIDestruirObjecte : Executable {
 
 
 public interface IReiniciable {
+    void DesarEstat();
     void RestablirEstat();
 }

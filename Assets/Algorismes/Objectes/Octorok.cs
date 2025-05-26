@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public class Octorok : MonoBehaviour, IReiniciable {
+
+    private Vector3 posicio;
     public float velocitat;
     public float tempsMinimCanvi;
     public float tempsMaximCanvi;
@@ -12,9 +14,13 @@ public class Octorok : MonoBehaviour, IReiniciable {
     public Sprite[] follets; // creo que esto se podria hacer static ya que va a ser la misma referencia para todos los objetos
     private SpriteRenderer spriteRenderer;
     private bool becCurt;
+    
+    public void DesarEstat() { 
+        posicio = transform.position;
+    }
 
     public void RestablirEstat() {
-        
+        transform.position = posicio;
     }
 
     void Start() {

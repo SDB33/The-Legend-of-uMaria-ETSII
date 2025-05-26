@@ -15,8 +15,8 @@ public class Entitat : MonoBehaviour {
         movimentFinal(posIni);
     }    
 
-    public void OnMouseDown() { pucMourem = true; this.GetComponent<SpriteRenderer>().sortingOrder = 1;  StartCoroutine(MouMe()); }
-    public void OnMouseUp()   { pucMourem = false;                                                                                }
+    public void OnMouseDown() { if (!enabled) return; pucMourem = true; this.GetComponent<SpriteRenderer>().sortingOrder = 1;  StartCoroutine(MouMe()); }
+    public void OnMouseUp()   {                       pucMourem = false;                                                                                }
 
     private void movimentConstant() { transform.position = Vector3.Scale(Camera.main.ScreenToWorldPoint(Input.mousePosition), new Vector3(1f, 1f, 0f)); }
 

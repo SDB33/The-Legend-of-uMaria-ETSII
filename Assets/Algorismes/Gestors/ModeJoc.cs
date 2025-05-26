@@ -1,9 +1,13 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ModeJoc : MonoBehaviour {
 
     private HashSet<GameObject> modificats;
+
+    [SerializeField] private GSTRodanxes rodanxes;
 
     void Start() {
         modificats = new HashSet<GameObject>();
@@ -16,16 +20,19 @@ public class ModeJoc : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D altre) {
         if (modificats.Add(altre.gameObject)){
             altre.gameObject.GetComponent<Entitat>().enabled = false;
+            altre.gameObject.GetComponent<IReiniciable>().DesarEstat();
         }
         
         ((MonoBehaviour) altre.gameObject.GetComponent<IReiniciable>()).enabled = true;
     }
-    
+
     void OnTriggerExit2D(Collider2D altre) {
-        //altre.gameObject.SetActive(false);
+        ((MonoBehaviour)altre.gameObject.GetComponent<IReiniciable>()).enabled = false;
+        altre.attachedRigidbody.linearVelocity = Vector2.zero; // esto no es una buena solución, habría que ver como lo hace originalmente el juego
     }
     
     void OnDisable() {
+        if (modificats == null) { return; }
         foreach (GameObject objecte in modificats) {
             /*
             El problema de esto es que queremos que cuando termine el juego, se desactiven los que tenemos en pantalla 
@@ -36,17 +43,15 @@ public class ModeJoc : MonoBehaviour {
             objecte.GetComponent<IReiniciable>().RestablirEstat();
         }
     }
+    
+    
+    public void Editar (InputAction.CallbackContext canvi) {
+        if (canvi.performed) {
+            transform.parent.GetComponent<PlayerInput>().SwitchCurrentActionMap("Prometeu");
+            rodanxes.enabled = true;
+            this.gameObject.transform.parent.GetChild(0).gameObject.SetActive(true);
+            this.gameObject.SetActive(false);
+        } 
+    }
         
 }
-
-
-/*
-Hay dos temas diferentes, cuando el juego empieza y se toca al objeto por primera vez
-Activamos su modo juego y desactivamos su modo ser editado
-activamos el objeto
-
-Cuando sale de la pantalla, desactivamos todo el objeto
-
-Cuando vamos a dejar de jugar,
-desactivamos su modo juego, activamos su modo ser editado
-*/

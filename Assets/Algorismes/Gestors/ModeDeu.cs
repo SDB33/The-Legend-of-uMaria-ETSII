@@ -99,8 +99,18 @@ public class ModeDeu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     public void Refer    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { historial.Refer();                    } }
     public void Desar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { arxiu.DesarContingut(historial);      } }
     public void Carregar (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) { arxiu.CarregarContingut(historial);   } }
-    public void Jugar    (InputAction.CallbackContext canvi) { if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) {                        } }
+    public void Jugar    (InputAction.CallbackContext canvi) {
+        if (canvi.performed && !estiConstruint && !rodanxes.EsticAlMenu()) {
+            transform.parent.GetComponent<PlayerInput>().SwitchCurrentActionMap("Atena");
+            rodanxes.enabled = false;
+            this.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
+            this.gameObject.SetActive(false);
+        } 
+    }
     
 
     public void Introduir(Executable accio) { historial.introduir(accio); }
+    
+    
+    
 }

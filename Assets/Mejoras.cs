@@ -15,6 +15,11 @@ Hay que poner el código bien, comentado, de forma más general, con todas las c
 cada bloque o ciertos bloques deberían tener un límite de cuántas veces puedes ponerlo. Ya sea que en cada momento hay un texto con un contador y va bajando o simplemente no deje al final ponerlo
 
 
+los atajos de teclado como guardar deberian funcionar solo en el modo edicion y no en el modo juego.
+
+En el modo juego, habria que decantarse por alguna opcion para cuando los enemigos se salgan de la pantalla, a la hora de destruirlos y luego volver a instanciarlos cuando vuelvan a la pantalla o hacerlo por chunks
+o reiniciar su comportamiento o así. Dependiendo del estilo se podría hacer por pantallas, por secciones, por habitaciones, etc.
+
 
 Sorting Layer
 
