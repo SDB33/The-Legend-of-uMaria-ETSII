@@ -1,0 +1,583 @@
+fileFormatVersion: 2
+guid: 437400329cb95344e9b7b9da0fb90621
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4232280696199656648
+    second: Mariank_0
+  - first:
+      213: 9029057924010320167
+    second: Mariank_1
+  - first:
+      213: -4632035189181196837
+    second: Mariank_2
+  - first:
+      213: -3702521542266564005
+    second: Mariank_3
+  - first:
+      213: -37564603453588750
+    second: Mariank_4
+  - first:
+      213: 3373838609535496193
+    second: Mariank_5
+  - first:
+      213: -1978187355103216844
+    second: Mariank_6
+  - first:
+      213: -6825197707547482722
+    second: Mariank_7
+  - first:
+      213: 4097227390861030969
+    second: Mariank_8
+  - first:
+      213: -496842901394496080
+    second: Mariank_9
+  - first:
+      213: -1297966025825908185
+    second: Mariank_10
+  - first:
+      213: 1534812688648831911
+    second: Mariank_11
+  - first:
+      213: 38638261435872035
+    second: Mariank_12
+  - first:
+      213: 6056467002087946566
+    second: Mariank_13
+  - first:
+      213: -2157199871298089800
+    second: Mariank_14
+  - first:
+      213: 4938411145964176981
+    second: Mariank_15
+  - first:
+      213: 1295420611719559242
+    second: Mariank_16
+  - first:
+      213: -502987198946813010
+    second: Mariank_17
+  - first:
+      213: 5105349203103523930
+    second: Mariank_18
+  - first:
+      213: 8526921199521574016
+    second: Mariank_19
+  - first:
+      213: -7579531606173750453
+    second: Mariank_20
+  - first:
+      213: -3567953446484162246
+    second: Mariank_21
+  - first:
+      213: 8836856962238498199
+    second: Mariank_22
+  - first:
+      213: 7780330010578560755
+    second: Mariank_23
+  - first:
+      213: 4402743520636018735
+    second: Mariank_24
+  - first:
+      213: 3370503619790635772
+    second: Mariank_25
+  - first:
+      213: 7762477603470039194
+    second: Mariank_26
+  - first:
+      213: 410072056375433150
+    second: Mariank_27
+  - first:
+      213: 9017259552168085736
+    second: Mariank_28
+  - first:
+      213: -4204712208110006788
+    second: Mariank_29
+  - first:
+      213: -7476832349084292356
+    second: Mariank_30
+  - first:
+      213: 3403221676759744334
+    second: Mariank_31
+  - first:
+      213: 1875585866433168454
+    second: Mariank_32
+  - first:
+      213: -5619124267588724713
+    second: Mariank_33
+  - first:
+      213: 6601748789085741413
+    second: Mariank_34
+  - first:
+      213: -7098973457527979956
+    second: Mariank_35
+  - first:
+      213: -4933043125965624491
+    second: Mariank_36
+  - first:
+      213: 6027515787403165298
+    second: Mariank_37
+  - first:
+      213: 1290046261744962902
+    second: Mariank_38
+  - first:
+      213: -2098982165287733809
+    second: Mariank_39
+  - first:
+      213: -6492311247100892983
+    second: Mariank_40
+  - first:
+      213: -474982474500512063
+    second: Mariank_41
+  - first:
+      213: 6547581341661943472
+    second: Mariank_42
+  - first:
+      213: -3370728429000969419
+    second: Mariank_43
+  - first:
+      213: -7806523980378214017
+    second: Mariank_44
+  - first:
+      213: -6160268313254627399
+    second: Mariank_45
+  - first:
+      213: -3412196271260181195
+    second: Mariank_46
+  - first:
+      213: -5542925131704208555
+    second: Mariank_47
+  - first:
+      213: -6848808797417527237
+    second: Mariank_48
+  - first:
+      213: 7643657563718979955
+    second: Mariank_49
+  - first:
+      213: 7957018875689455584
+    second: Mariank_50
+  - first:
+      213: -3518498016372952213
+    second: Mariank_51
+  - first:
+      213: 7133636578440285948
+    second: Mariank_52
+  - first:
+      213: 3082964386950062939
+    second: Mariank_53
+  - first:
+      213: -5886228597001929621
+    second: Mariank_54
+  - first:
+      213: 4246853917424542740
+    second: Mariank_55
+  - first:
+      213: -6972013793916840264
+    second: Mariank_56
+  - first:
+      213: 5326616720533692711
+    second: Mariank_57
+  - first:
+      213: -983659325770616524
+    second: Mariank_58
+  - first:
+      213: -7824064349398702466
+    second: Mariank_59
+  - first:
+      213: 5625605312197182436
+    second: Mariank_60
+  - first:
+      213: 7892893665520986591
+    second: Mariank_61
+  - first:
+      213: 784749177865130310
+    second: Mariank_62
+  - first:
+      213: 6039668210027063040
+    second: Mariank_63
+  - first:
+      213: -1060713457732467773
+    second: Mariank_64
+  - first:
+      213: -7806106739327874455
+    second: Mariank_65
+  - first:
+      213: -6595906111135822510
+    second: Mariank_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mariank_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 83
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c439be9ed41cba30800000000000000
+      internalID: 4232280696199656648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 83
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 721af090858ad4d70800000000000000
+      internalID: 9029057924010320167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 83
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5deb97984b7bfb0800000000000000
+      internalID: -4632035189181196837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 85
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5258fb26400e9cc0800000000000000
+      internalID: -3702521542266564005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 85
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa3503313b8a7ff0800000000000000
+      internalID: -37564603453588750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 85
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1007cda075842de20800000000000000
+      internalID: 3373838609535496193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_6
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 85
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b37e7d4111c84e0800000000000000
+      internalID: -1978187355103216844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 83
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9562dfa8d60841a0800000000000000
+      internalID: -6825197707547482722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mariank_8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 84
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936b54c9a964cd830800000000000000
+      internalID: 4097227390861030969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ee92750b4cb852f40a6b4041ac8d821d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mariank_0: 4232280696199656648
+      Mariank_1: 9029057924010320167
+      Mariank_10: -1297966025825908185
+      Mariank_11: 1534812688648831911
+      Mariank_12: 38638261435872035
+      Mariank_13: 6056467002087946566
+      Mariank_14: -2157199871298089800
+      Mariank_15: 4938411145964176981
+      Mariank_16: 1295420611719559242
+      Mariank_17: -502987198946813010
+      Mariank_18: 5105349203103523930
+      Mariank_19: 8526921199521574016
+      Mariank_2: -4632035189181196837
+      Mariank_20: -7579531606173750453
+      Mariank_21: -3567953446484162246
+      Mariank_22: 8836856962238498199
+      Mariank_23: 7780330010578560755
+      Mariank_24: 4402743520636018735
+      Mariank_25: 3370503619790635772
+      Mariank_26: 7762477603470039194
+      Mariank_27: 410072056375433150
+      Mariank_28: 9017259552168085736
+      Mariank_29: -4204712208110006788
+      Mariank_3: -3702521542266564005
+      Mariank_30: -7476832349084292356
+      Mariank_31: 3403221676759744334
+      Mariank_32: 1875585866433168454
+      Mariank_33: -5619124267588724713
+      Mariank_34: 6601748789085741413
+      Mariank_35: -7098973457527979956
+      Mariank_36: -4933043125965624491
+      Mariank_37: 6027515787403165298
+      Mariank_38: 1290046261744962902
+      Mariank_39: -2098982165287733809
+      Mariank_4: -37564603453588750
+      Mariank_40: -6492311247100892983
+      Mariank_41: -474982474500512063
+      Mariank_42: 6547581341661943472
+      Mariank_43: -3370728429000969419
+      Mariank_44: -7806523980378214017
+      Mariank_45: -6160268313254627399
+      Mariank_46: -3412196271260181195
+      Mariank_47: -5542925131704208555
+      Mariank_48: -6848808797417527237
+      Mariank_49: 7643657563718979955
+      Mariank_5: 3373838609535496193
+      Mariank_50: 7957018875689455584
+      Mariank_51: -3518498016372952213
+      Mariank_52: 7133636578440285948
+      Mariank_53: 3082964386950062939
+      Mariank_54: -5886228597001929621
+      Mariank_55: 4246853917424542740
+      Mariank_56: -6972013793916840264
+      Mariank_57: 5326616720533692711
+      Mariank_58: -983659325770616524
+      Mariank_59: -7824064349398702466
+      Mariank_6: -1978187355103216844
+      Mariank_60: 5625605312197182436
+      Mariank_61: 7892893665520986591
+      Mariank_62: 784749177865130310
+      Mariank_63: 6039668210027063040
+      Mariank_64: -1060713457732467773
+      Mariank_65: -7806106739327874455
+      Mariank_66: -6595906111135822510
+      Mariank_7: -6825197707547482722
+      Mariank_8: 4097227390861030969
+      Mariank_9: -496842901394496080
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

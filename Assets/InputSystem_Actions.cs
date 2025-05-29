@@ -897,6 +897,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Moures"",
+                    ""type"": ""Value"",
+                    ""id"": ""254eebd8-a3db-446d-ae84-d3a0b40d1289"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -930,6 +939,61 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Editar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""b8b96de4-2aa9-41e0-b656-27b0b234fb65"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moures"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f6c38d19-bb1f-43ce-afdb-9114444b6b8e"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moures"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""57d822f6-b6c8-4107-ba47-36e1aa2a168c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moures"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ffc56e08-c3f9-417d-b54b-7bf7c8346def"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moures"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""6c1a0642-e247-4b41-bca0-21f73842ec43"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moures"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -1022,6 +1086,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Atena
         m_Atena = asset.FindActionMap("Atena", throwIfNotFound: true);
         m_Atena_Editar = m_Atena.FindAction("Editar", throwIfNotFound: true);
+        m_Atena_Moures = m_Atena.FindAction("Moures", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1451,6 +1516,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Atena;
     private List<IAtenaActions> m_AtenaActionsCallbackInterfaces = new List<IAtenaActions>();
     private readonly InputAction m_Atena_Editar;
+    private readonly InputAction m_Atena_Moures;
     /// <summary>
     /// Provides access to input actions defined in input action map "Atena".
     /// </summary>
@@ -1466,6 +1532,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Atena/Editar".
         /// </summary>
         public InputAction @Editar => m_Wrapper.m_Atena_Editar;
+        /// <summary>
+        /// Provides access to the underlying input action "Atena/Moures".
+        /// </summary>
+        public InputAction @Moures => m_Wrapper.m_Atena_Moures;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1495,6 +1565,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Editar.started += instance.OnEditar;
             @Editar.performed += instance.OnEditar;
             @Editar.canceled += instance.OnEditar;
+            @Moures.started += instance.OnMoures;
+            @Moures.performed += instance.OnMoures;
+            @Moures.canceled += instance.OnMoures;
         }
 
         /// <summary>
@@ -1509,6 +1582,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Editar.started -= instance.OnEditar;
             @Editar.performed -= instance.OnEditar;
             @Editar.canceled -= instance.OnEditar;
+            @Moures.started -= instance.OnMoures;
+            @Moures.performed -= instance.OnMoures;
+            @Moures.canceled -= instance.OnMoures;
         }
 
         /// <summary>
@@ -1749,5 +1825,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEditar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Moures" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMoures(InputAction.CallbackContext context);
     }
 }
