@@ -604,7 +604,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Prometeu"",
+            ""name"": ""Edicion"",
             ""id"": ""b54be9ff-d0c8-4a80-a7b6-daa064f5fafd"",
             ""actions"": [
                 {
@@ -617,7 +617,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Desfer"",
+                    ""name"": ""Deshacer"",
                     ""type"": ""Button"",
                     ""id"": ""c7229f3d-f914-4e59-b667-826cea7275f4"",
                     ""expectedControlType"": """",
@@ -626,7 +626,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Refer"",
+                    ""name"": ""Rehacer"",
                     ""type"": ""Button"",
                     ""id"": ""b42acd0e-11fd-4d47-bad0-33528a54c8e4"",
                     ""expectedControlType"": """",
@@ -635,7 +635,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Desar"",
+                    ""name"": ""Guardar"",
                     ""type"": ""Button"",
                     ""id"": ""f45dc34d-146b-4611-b4d3-af11a4806e27"",
                     ""expectedControlType"": """",
@@ -644,7 +644,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Carregar"",
+                    ""name"": ""Cargar"",
                     ""type"": ""Button"",
                     ""id"": ""d0404cfe-3926-4507-a4f9-d27c5d0213f3"",
                     ""expectedControlType"": """",
@@ -725,7 +725,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desfer"",
+                    ""action"": ""Deshacer"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -736,7 +736,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desfer"",
+                    ""action"": ""Deshacer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -747,7 +747,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desfer"",
+                    ""action"": ""Deshacer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -758,7 +758,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Refer"",
+                    ""action"": ""Rehacer"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -769,7 +769,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Refer"",
+                    ""action"": ""Rehacer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -780,7 +780,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Refer"",
+                    ""action"": ""Rehacer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -791,7 +791,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desar"",
+                    ""action"": ""Guardar"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -802,7 +802,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desar"",
+                    ""action"": ""Guardar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -813,7 +813,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desar"",
+                    ""action"": ""Guardar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -824,7 +824,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Carregar"",
+                    ""action"": ""Cargar"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -835,7 +835,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Carregar"",
+                    ""action"": ""Cargar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -846,7 +846,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Carregar"",
+                    ""action"": ""Cargar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -886,7 +886,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Atena"",
+            ""name"": ""Juego"",
             ""id"": ""7e244028-e79a-43ef-a18a-a39093b93bdc"",
             ""actions"": [
                 {
@@ -899,7 +899,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Moures"",
+                    ""name"": ""Moverse"",
                     ""type"": ""Value"",
                     ""id"": ""254eebd8-a3db-446d-ae84-d3a0b40d1289"",
                     ""expectedControlType"": ""Vector2"",
@@ -949,7 +949,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Moures"",
+                    ""action"": ""Moverse"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -960,7 +960,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Moures"",
+                    ""action"": ""Moverse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -971,7 +971,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Moures"",
+                    ""action"": ""Moverse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -982,7 +982,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Moures"",
+                    ""action"": ""Moverse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -993,7 +993,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Moures"",
+                    ""action"": ""Moverse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -1075,25 +1075,25 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // Prometeu
-        m_Prometeu = asset.FindActionMap("Prometeu", throwIfNotFound: true);
-        m_Prometeu_MouCam = m_Prometeu.FindAction("MouCam", throwIfNotFound: true);
-        m_Prometeu_Desfer = m_Prometeu.FindAction("Desfer", throwIfNotFound: true);
-        m_Prometeu_Refer = m_Prometeu.FindAction("Refer", throwIfNotFound: true);
-        m_Prometeu_Desar = m_Prometeu.FindAction("Desar", throwIfNotFound: true);
-        m_Prometeu_Carregar = m_Prometeu.FindAction("Carregar", throwIfNotFound: true);
-        m_Prometeu_Jugar = m_Prometeu.FindAction("Jugar", throwIfNotFound: true);
-        // Atena
-        m_Atena = asset.FindActionMap("Atena", throwIfNotFound: true);
-        m_Atena_Editar = m_Atena.FindAction("Editar", throwIfNotFound: true);
-        m_Atena_Moures = m_Atena.FindAction("Moures", throwIfNotFound: true);
+        // Edicion
+        m_Edicion = asset.FindActionMap("Edicion", throwIfNotFound: true);
+        m_Edicion_MouCam = m_Edicion.FindAction("MouCam", throwIfNotFound: true);
+        m_Edicion_Deshacer = m_Edicion.FindAction("Deshacer", throwIfNotFound: true);
+        m_Edicion_Rehacer = m_Edicion.FindAction("Rehacer", throwIfNotFound: true);
+        m_Edicion_Guardar = m_Edicion.FindAction("Guardar", throwIfNotFound: true);
+        m_Edicion_Cargar = m_Edicion.FindAction("Cargar", throwIfNotFound: true);
+        m_Edicion_Jugar = m_Edicion.FindAction("Jugar", throwIfNotFound: true);
+        // Juego
+        m_Juego = asset.FindActionMap("Juego", throwIfNotFound: true);
+        m_Juego_Editar = m_Juego.FindAction("Editar", throwIfNotFound: true);
+        m_Juego_Moverse = m_Juego.FindAction("Moverse", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Prometeu.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Prometeu.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Atena.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Atena.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Edicion.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Edicion.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Juego.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Juego.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1361,54 +1361,54 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// </summary>
     public UIActions @UI => new UIActions(this);
 
-    // Prometeu
-    private readonly InputActionMap m_Prometeu;
-    private List<IPrometeuActions> m_PrometeuActionsCallbackInterfaces = new List<IPrometeuActions>();
-    private readonly InputAction m_Prometeu_MouCam;
-    private readonly InputAction m_Prometeu_Desfer;
-    private readonly InputAction m_Prometeu_Refer;
-    private readonly InputAction m_Prometeu_Desar;
-    private readonly InputAction m_Prometeu_Carregar;
-    private readonly InputAction m_Prometeu_Jugar;
+    // Edicion
+    private readonly InputActionMap m_Edicion;
+    private List<IEdicionActions> m_EdicionActionsCallbackInterfaces = new List<IEdicionActions>();
+    private readonly InputAction m_Edicion_MouCam;
+    private readonly InputAction m_Edicion_Deshacer;
+    private readonly InputAction m_Edicion_Rehacer;
+    private readonly InputAction m_Edicion_Guardar;
+    private readonly InputAction m_Edicion_Cargar;
+    private readonly InputAction m_Edicion_Jugar;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Prometeu".
+    /// Provides access to input actions defined in input action map "Edicion".
     /// </summary>
-    public struct PrometeuActions
+    public struct EdicionActions
     {
         private @InputSystem_Actions m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public PrometeuActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        public EdicionActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/MouCam".
+        /// Provides access to the underlying input action "Edicion/MouCam".
         /// </summary>
-        public InputAction @MouCam => m_Wrapper.m_Prometeu_MouCam;
+        public InputAction @MouCam => m_Wrapper.m_Edicion_MouCam;
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/Desfer".
+        /// Provides access to the underlying input action "Edicion/Deshacer".
         /// </summary>
-        public InputAction @Desfer => m_Wrapper.m_Prometeu_Desfer;
+        public InputAction @Deshacer => m_Wrapper.m_Edicion_Deshacer;
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/Refer".
+        /// Provides access to the underlying input action "Edicion/Rehacer".
         /// </summary>
-        public InputAction @Refer => m_Wrapper.m_Prometeu_Refer;
+        public InputAction @Rehacer => m_Wrapper.m_Edicion_Rehacer;
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/Desar".
+        /// Provides access to the underlying input action "Edicion/Guardar".
         /// </summary>
-        public InputAction @Desar => m_Wrapper.m_Prometeu_Desar;
+        public InputAction @Guardar => m_Wrapper.m_Edicion_Guardar;
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/Carregar".
+        /// Provides access to the underlying input action "Edicion/Cargar".
         /// </summary>
-        public InputAction @Carregar => m_Wrapper.m_Prometeu_Carregar;
+        public InputAction @Cargar => m_Wrapper.m_Edicion_Cargar;
         /// <summary>
-        /// Provides access to the underlying input action "Prometeu/Jugar".
+        /// Provides access to the underlying input action "Edicion/Jugar".
         /// </summary>
-        public InputAction @Jugar => m_Wrapper.m_Prometeu_Jugar;
+        public InputAction @Jugar => m_Wrapper.m_Edicion_Jugar;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Prometeu; }
+        public InputActionMap Get() { return m_Wrapper.m_Edicion; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -1416,9 +1416,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="PrometeuActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="EdicionActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(PrometeuActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(EdicionActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -1426,26 +1426,26 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="PrometeuActions" />
-        public void AddCallbacks(IPrometeuActions instance)
+        /// <seealso cref="EdicionActions" />
+        public void AddCallbacks(IEdicionActions instance)
         {
-            if (instance == null || m_Wrapper.m_PrometeuActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PrometeuActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_EdicionActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_EdicionActionsCallbackInterfaces.Add(instance);
             @MouCam.started += instance.OnMouCam;
             @MouCam.performed += instance.OnMouCam;
             @MouCam.canceled += instance.OnMouCam;
-            @Desfer.started += instance.OnDesfer;
-            @Desfer.performed += instance.OnDesfer;
-            @Desfer.canceled += instance.OnDesfer;
-            @Refer.started += instance.OnRefer;
-            @Refer.performed += instance.OnRefer;
-            @Refer.canceled += instance.OnRefer;
-            @Desar.started += instance.OnDesar;
-            @Desar.performed += instance.OnDesar;
-            @Desar.canceled += instance.OnDesar;
-            @Carregar.started += instance.OnCarregar;
-            @Carregar.performed += instance.OnCarregar;
-            @Carregar.canceled += instance.OnCarregar;
+            @Deshacer.started += instance.OnDeshacer;
+            @Deshacer.performed += instance.OnDeshacer;
+            @Deshacer.canceled += instance.OnDeshacer;
+            @Rehacer.started += instance.OnRehacer;
+            @Rehacer.performed += instance.OnRehacer;
+            @Rehacer.canceled += instance.OnRehacer;
+            @Guardar.started += instance.OnGuardar;
+            @Guardar.performed += instance.OnGuardar;
+            @Guardar.canceled += instance.OnGuardar;
+            @Cargar.started += instance.OnCargar;
+            @Cargar.performed += instance.OnCargar;
+            @Cargar.canceled += instance.OnCargar;
             @Jugar.started += instance.OnJugar;
             @Jugar.performed += instance.OnJugar;
             @Jugar.canceled += instance.OnJugar;
@@ -1457,36 +1457,36 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="PrometeuActions" />
-        private void UnregisterCallbacks(IPrometeuActions instance)
+        /// <seealso cref="EdicionActions" />
+        private void UnregisterCallbacks(IEdicionActions instance)
         {
             @MouCam.started -= instance.OnMouCam;
             @MouCam.performed -= instance.OnMouCam;
             @MouCam.canceled -= instance.OnMouCam;
-            @Desfer.started -= instance.OnDesfer;
-            @Desfer.performed -= instance.OnDesfer;
-            @Desfer.canceled -= instance.OnDesfer;
-            @Refer.started -= instance.OnRefer;
-            @Refer.performed -= instance.OnRefer;
-            @Refer.canceled -= instance.OnRefer;
-            @Desar.started -= instance.OnDesar;
-            @Desar.performed -= instance.OnDesar;
-            @Desar.canceled -= instance.OnDesar;
-            @Carregar.started -= instance.OnCarregar;
-            @Carregar.performed -= instance.OnCarregar;
-            @Carregar.canceled -= instance.OnCarregar;
+            @Deshacer.started -= instance.OnDeshacer;
+            @Deshacer.performed -= instance.OnDeshacer;
+            @Deshacer.canceled -= instance.OnDeshacer;
+            @Rehacer.started -= instance.OnRehacer;
+            @Rehacer.performed -= instance.OnRehacer;
+            @Rehacer.canceled -= instance.OnRehacer;
+            @Guardar.started -= instance.OnGuardar;
+            @Guardar.performed -= instance.OnGuardar;
+            @Guardar.canceled -= instance.OnGuardar;
+            @Cargar.started -= instance.OnCargar;
+            @Cargar.performed -= instance.OnCargar;
+            @Cargar.canceled -= instance.OnCargar;
             @Jugar.started -= instance.OnJugar;
             @Jugar.performed -= instance.OnJugar;
             @Jugar.canceled -= instance.OnJugar;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PrometeuActions.UnregisterCallbacks(IPrometeuActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="EdicionActions.UnregisterCallbacks(IEdicionActions)" />.
         /// </summary>
-        /// <seealso cref="PrometeuActions.UnregisterCallbacks(IPrometeuActions)" />
-        public void RemoveCallbacks(IPrometeuActions instance)
+        /// <seealso cref="EdicionActions.UnregisterCallbacks(IEdicionActions)" />
+        public void RemoveCallbacks(IEdicionActions instance)
         {
-            if (m_Wrapper.m_PrometeuActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_EdicionActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -1496,50 +1496,50 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="PrometeuActions.AddCallbacks(IPrometeuActions)" />
-        /// <seealso cref="PrometeuActions.RemoveCallbacks(IPrometeuActions)" />
-        /// <seealso cref="PrometeuActions.UnregisterCallbacks(IPrometeuActions)" />
-        public void SetCallbacks(IPrometeuActions instance)
+        /// <seealso cref="EdicionActions.AddCallbacks(IEdicionActions)" />
+        /// <seealso cref="EdicionActions.RemoveCallbacks(IEdicionActions)" />
+        /// <seealso cref="EdicionActions.UnregisterCallbacks(IEdicionActions)" />
+        public void SetCallbacks(IEdicionActions instance)
         {
-            foreach (var item in m_Wrapper.m_PrometeuActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_EdicionActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PrometeuActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_EdicionActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="PrometeuActions" /> instance referencing this action map.
+    /// Provides a new <see cref="EdicionActions" /> instance referencing this action map.
     /// </summary>
-    public PrometeuActions @Prometeu => new PrometeuActions(this);
+    public EdicionActions @Edicion => new EdicionActions(this);
 
-    // Atena
-    private readonly InputActionMap m_Atena;
-    private List<IAtenaActions> m_AtenaActionsCallbackInterfaces = new List<IAtenaActions>();
-    private readonly InputAction m_Atena_Editar;
-    private readonly InputAction m_Atena_Moures;
+    // Juego
+    private readonly InputActionMap m_Juego;
+    private List<IJuegoActions> m_JuegoActionsCallbackInterfaces = new List<IJuegoActions>();
+    private readonly InputAction m_Juego_Editar;
+    private readonly InputAction m_Juego_Moverse;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Atena".
+    /// Provides access to input actions defined in input action map "Juego".
     /// </summary>
-    public struct AtenaActions
+    public struct JuegoActions
     {
         private @InputSystem_Actions m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public AtenaActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        public JuegoActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Atena/Editar".
+        /// Provides access to the underlying input action "Juego/Editar".
         /// </summary>
-        public InputAction @Editar => m_Wrapper.m_Atena_Editar;
+        public InputAction @Editar => m_Wrapper.m_Juego_Editar;
         /// <summary>
-        /// Provides access to the underlying input action "Atena/Moures".
+        /// Provides access to the underlying input action "Juego/Moverse".
         /// </summary>
-        public InputAction @Moures => m_Wrapper.m_Atena_Moures;
+        public InputAction @Moverse => m_Wrapper.m_Juego_Moverse;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Atena; }
+        public InputActionMap Get() { return m_Wrapper.m_Juego; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -1547,9 +1547,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="AtenaActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="JuegoActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(AtenaActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(JuegoActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -1557,17 +1557,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="AtenaActions" />
-        public void AddCallbacks(IAtenaActions instance)
+        /// <seealso cref="JuegoActions" />
+        public void AddCallbacks(IJuegoActions instance)
         {
-            if (instance == null || m_Wrapper.m_AtenaActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_AtenaActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_JuegoActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_JuegoActionsCallbackInterfaces.Add(instance);
             @Editar.started += instance.OnEditar;
             @Editar.performed += instance.OnEditar;
             @Editar.canceled += instance.OnEditar;
-            @Moures.started += instance.OnMoures;
-            @Moures.performed += instance.OnMoures;
-            @Moures.canceled += instance.OnMoures;
+            @Moverse.started += instance.OnMoverse;
+            @Moverse.performed += instance.OnMoverse;
+            @Moverse.canceled += instance.OnMoverse;
         }
 
         /// <summary>
@@ -1576,24 +1576,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="AtenaActions" />
-        private void UnregisterCallbacks(IAtenaActions instance)
+        /// <seealso cref="JuegoActions" />
+        private void UnregisterCallbacks(IJuegoActions instance)
         {
             @Editar.started -= instance.OnEditar;
             @Editar.performed -= instance.OnEditar;
             @Editar.canceled -= instance.OnEditar;
-            @Moures.started -= instance.OnMoures;
-            @Moures.performed -= instance.OnMoures;
-            @Moures.canceled -= instance.OnMoures;
+            @Moverse.started -= instance.OnMoverse;
+            @Moverse.performed -= instance.OnMoverse;
+            @Moverse.canceled -= instance.OnMoverse;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="AtenaActions.UnregisterCallbacks(IAtenaActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="JuegoActions.UnregisterCallbacks(IJuegoActions)" />.
         /// </summary>
-        /// <seealso cref="AtenaActions.UnregisterCallbacks(IAtenaActions)" />
-        public void RemoveCallbacks(IAtenaActions instance)
+        /// <seealso cref="JuegoActions.UnregisterCallbacks(IJuegoActions)" />
+        public void RemoveCallbacks(IJuegoActions instance)
         {
-            if (m_Wrapper.m_AtenaActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_JuegoActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -1603,21 +1603,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="AtenaActions.AddCallbacks(IAtenaActions)" />
-        /// <seealso cref="AtenaActions.RemoveCallbacks(IAtenaActions)" />
-        /// <seealso cref="AtenaActions.UnregisterCallbacks(IAtenaActions)" />
-        public void SetCallbacks(IAtenaActions instance)
+        /// <seealso cref="JuegoActions.AddCallbacks(IJuegoActions)" />
+        /// <seealso cref="JuegoActions.RemoveCallbacks(IJuegoActions)" />
+        /// <seealso cref="JuegoActions.UnregisterCallbacks(IJuegoActions)" />
+        public void SetCallbacks(IJuegoActions instance)
         {
-            foreach (var item in m_Wrapper.m_AtenaActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_JuegoActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_AtenaActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_JuegoActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="AtenaActions" /> instance referencing this action map.
+    /// Provides a new <see cref="JuegoActions" /> instance referencing this action map.
     /// </summary>
-    public AtenaActions @Atena => new AtenaActions(this);
+    public JuegoActions @Juego => new JuegoActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1762,11 +1762,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
     }
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Prometeu" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Edicion" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="PrometeuActions.AddCallbacks(IPrometeuActions)" />
-    /// <seealso cref="PrometeuActions.RemoveCallbacks(IPrometeuActions)" />
-    public interface IPrometeuActions
+    /// <seealso cref="EdicionActions.AddCallbacks(IEdicionActions)" />
+    /// <seealso cref="EdicionActions.RemoveCallbacks(IEdicionActions)" />
+    public interface IEdicionActions
     {
         /// <summary>
         /// Method invoked when associated input action "MouCam" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -1776,33 +1776,33 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouCam(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Desfer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Deshacer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDesfer(InputAction.CallbackContext context);
+        void OnDeshacer(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Refer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Rehacer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnRefer(InputAction.CallbackContext context);
+        void OnRehacer(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Desar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Guardar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDesar(InputAction.CallbackContext context);
+        void OnGuardar(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Carregar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Cargar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnCarregar(InputAction.CallbackContext context);
+        void OnCargar(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Jugar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1812,11 +1812,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnJugar(InputAction.CallbackContext context);
     }
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Atena" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Juego" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="AtenaActions.AddCallbacks(IAtenaActions)" />
-    /// <seealso cref="AtenaActions.RemoveCallbacks(IAtenaActions)" />
-    public interface IAtenaActions
+    /// <seealso cref="JuegoActions.AddCallbacks(IJuegoActions)" />
+    /// <seealso cref="JuegoActions.RemoveCallbacks(IJuegoActions)" />
+    public interface IJuegoActions
     {
         /// <summary>
         /// Method invoked when associated input action "Editar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -1826,11 +1826,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEditar(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Moures" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Moverse" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMoures(InputAction.CallbackContext context);
+        void OnMoverse(InputAction.CallbackContext context);
     }
 }

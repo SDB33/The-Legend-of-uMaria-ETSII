@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-//https://github.com/Satoshi-Hirazawa  Agraïments a aquest usuari per mostrar-me la solució al problema
-                                    // Thanks to that user for showing me the solution to the problem
-
-public class NomesFarcitCircular : Image {
+//https://github.com/Satoshi-Hirazawa  Thanks to that user for showing me the solution to the problem
+                                    
+public class SoloRellenoCircular : Image {
     public override bool IsRaycastLocationValid(Vector2 screenPoint, Camera eventCamera) {
         if (!base.IsRaycastLocationValid(screenPoint, eventCamera)) { return false; }
         Vector2 localPoint;

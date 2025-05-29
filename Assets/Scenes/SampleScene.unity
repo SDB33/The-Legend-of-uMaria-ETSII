@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 48206124}
   - component: {fileID: 48206123}
   m_Layer: 5
-  m_Name: MouEsq
+  m_Name: MueveIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 164808346}
   - component: {fileID: 164808347}
   m_Layer: 5
-  m_Name: Saltadors
+  m_Name: Saltadores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,15 +559,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32af73c9b671f15429c561e546e4eefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocitat: 1.5
-  tempsMinimCanvi: 1
-  tempsMaximCanvi: 3
-  tempsCanviBec: 0.5
-  follets:
-  - {fileID: -856038216008697133, guid: 6dcac948e3abb314d964e90043117131, type: 3}
-  - {fileID: 7862256625435699934, guid: 6dcac948e3abb314d964e90043117131, type: 3}
-  - {fileID: 4027839303766080437, guid: 6dcac948e3abb314d964e90043117131, type: 3}
-  - {fileID: 1484558949937559846, guid: 6dcac948e3abb314d964e90043117131, type: 3}
+  vel: 2.5
+  tiempoMinCambio: 1
+  tiempoMaxCambio: 3
+  tiempoCambioPico: 0.3
+  abajoPicoCorto: {fileID: 7862256625435699934, guid: 6dcac948e3abb314d964e90043117131, type: 3}
+  abajoPicoLargo: {fileID: -856038216008697133, guid: 6dcac948e3abb314d964e90043117131, type: 3}
+  izquierdaPicoCorto: {fileID: 1484558949937559846, guid: 6dcac948e3abb314d964e90043117131, type: 3}
+  izquierdaPicoLargo: {fileID: 4027839303766080437, guid: 6dcac948e3abb314d964e90043117131, type: 3}
 --- !u!114 &191484608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +628,7 @@ GameObject:
   - component: {fileID: 241503422}
   - component: {fileID: 241503421}
   m_Layer: 5
-  m_Name: InterDusuari
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +732,7 @@ GameObject:
   - component: {fileID: 333554488}
   - component: {fileID: 333554487}
   m_Layer: 5
-  m_Name: MouDre
+  m_Name: MueveDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -813,7 +812,7 @@ GameObject:
   - component: {fileID: 381311759}
   - component: {fileID: 381311761}
   m_Layer: 5
-  m_Name: Rodanxes
+  m_Name: Rodajas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,7 +1120,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Camara
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1256,7 +1255,7 @@ GameObject:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
   m_Layer: 0
-  m_Name: Llum
+  m_Name: Luz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1423,7 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400081000ec0f1e4c97035f763772278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rodanxes: {fileID: 381311759}
+  gestorUI: {fileID: 381311759}
 --- !u!50 &674002744
 Rigidbody2D:
   serializedVersion: 5
@@ -1680,7 +1679,7 @@ GameObject:
   - component: {fileID: 953184962}
   - component: {fileID: 953184961}
   m_Layer: 5
-  m_Name: PanelEsq
+  m_Name: PanelIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1756,7 +1755,7 @@ GameObject:
   - component: {fileID: 1184135228}
   - component: {fileID: 1184135227}
   m_Layer: 5
-  m_Name: PanellSup
+  m_Name: PanelSup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1834,7 +1833,7 @@ GameObject:
   - component: {fileID: 1497045326}
   - component: {fileID: 1497045325}
   m_Layer: 5
-  m_Name: PanelDret
+  m_Name: PanelDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2043,7 +2042,7 @@ GameObject:
   - component: {fileID: 1663753513}
   - component: {fileID: 1663753512}
   m_Layer: 5
-  m_Name: Llenc
+  m_Name: Lienzo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2080,8 +2079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b1e3ec40c03444ab602429a4e883eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objecte: {fileID: 0}
-  rodanxes: {fileID: 381311759}
+  objetoAEditar: {fileID: 0}
+  gstUI: {fileID: 381311759}
 --- !u!114 &1663753513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2134,7 +2133,7 @@ GameObject:
   - component: {fileID: 1672446472}
   - component: {fileID: 1672446476}
   m_Layer: 5
-  m_Name: Fons
+  m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2308,8 +2307,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1663753512}
-        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: Desfer
+        m_TargetAssemblyTypeName: ModoEdicion, Assembly-CSharp
+        m_MethodName: Deshacer
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2324,8 +2323,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1663753512}
-        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: Refer
+        m_TargetAssemblyTypeName: ModoEdicion, Assembly-CSharp
+        m_MethodName: Rehacer
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2340,8 +2339,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1663753512}
-        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: Desar
+        m_TargetAssemblyTypeName: ModoEdicion, Assembly-CSharp
+        m_MethodName: Guardar
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2356,8 +2355,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1663753512}
-        m_TargetAssemblyTypeName: ModeDeu, Assembly-CSharp
-        m_MethodName: Carregar
+        m_TargetAssemblyTypeName: ModoEdicion, Assembly-CSharp
+        m_MethodName: Cargar
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2419,7 +2418,7 @@ MonoBehaviour:
     m_ActionName: 'Atena/Moures[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Prometeu
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1743693981
@@ -2780,7 +2779,7 @@ GameObject:
   - component: {fileID: 1950759985}
   - component: {fileID: 1950759984}
   m_Layer: 5
-  m_Name: Tancar
+  m_Name: Cerramiento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2991,7 +2990,7 @@ GameObject:
   - component: {fileID: 2140291460}
   - component: {fileID: 2140291461}
   m_Layer: 5
-  m_Name: Materials
+  m_Name: Materiales
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3268,7 +3267,7 @@ GameObject:
   - component: {fileID: 2466249422068586189}
   - component: {fileID: 8719711939446350578}
   m_Layer: 5
-  m_Name: Abstraccio
+  m_Name: CambiarModo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

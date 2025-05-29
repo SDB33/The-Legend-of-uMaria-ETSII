@@ -518,7 +518,7 @@
             ]
         },
         {
-            "name": "Prometeu",
+            "name": "Edicion",
             "id": "b54be9ff-d0c8-4a80-a7b6-daa064f5fafd",
             "actions": [
                 {
@@ -531,7 +531,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Desfer",
+                    "name": "Deshacer",
                     "type": "Button",
                     "id": "c7229f3d-f914-4e59-b667-826cea7275f4",
                     "expectedControlType": "",
@@ -540,7 +540,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Refer",
+                    "name": "Rehacer",
                     "type": "Button",
                     "id": "b42acd0e-11fd-4d47-bad0-33528a54c8e4",
                     "expectedControlType": "",
@@ -549,7 +549,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Desar",
+                    "name": "Guardar",
                     "type": "Button",
                     "id": "f45dc34d-146b-4611-b4d3-af11a4806e27",
                     "expectedControlType": "",
@@ -558,7 +558,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Carregar",
+                    "name": "Cargar",
                     "type": "Button",
                     "id": "d0404cfe-3926-4507-a4f9-d27c5d0213f3",
                     "expectedControlType": "",
@@ -639,7 +639,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Desfer",
+                    "action": "Deshacer",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -650,7 +650,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Desfer",
+                    "action": "Deshacer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -661,7 +661,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Desfer",
+                    "action": "Deshacer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -672,7 +672,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Refer",
+                    "action": "Rehacer",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -683,7 +683,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Refer",
+                    "action": "Rehacer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -694,7 +694,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Refer",
+                    "action": "Rehacer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -705,7 +705,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Desar",
+                    "action": "Guardar",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -716,7 +716,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Desar",
+                    "action": "Guardar",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -727,7 +727,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Desar",
+                    "action": "Guardar",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -738,7 +738,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Carregar",
+                    "action": "Cargar",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -749,7 +749,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Carregar",
+                    "action": "Cargar",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -760,7 +760,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Carregar",
+                    "action": "Cargar",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -800,7 +800,7 @@
             ]
         },
         {
-            "name": "Atena",
+            "name": "Juego",
             "id": "7e244028-e79a-43ef-a18a-a39093b93bdc",
             "actions": [
                 {
@@ -813,7 +813,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Moures",
+                    "name": "Moverse",
                     "type": "Value",
                     "id": "254eebd8-a3db-446d-ae84-d3a0b40d1289",
                     "expectedControlType": "Vector2",
@@ -863,7 +863,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Moures",
+                    "action": "Moverse",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -874,7 +874,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Moures",
+                    "action": "Moverse",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -885,7 +885,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Moures",
+                    "action": "Moverse",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -896,7 +896,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Moures",
+                    "action": "Moverse",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -907,7 +907,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Moures",
+                    "action": "Moverse",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

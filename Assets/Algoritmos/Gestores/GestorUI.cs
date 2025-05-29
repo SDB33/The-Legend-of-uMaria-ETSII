@@ -1,13 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
 using System.Collections;
 using TMPro;
 
-public class GSTRodanxes : MonoBehaviour {
+public class GestorUI : MonoBehaviour {
 
     public HorizontalLayoutGroup botifler;
     public RectTransform contenidor;
@@ -29,7 +27,7 @@ public class GSTRodanxes : MonoBehaviour {
 
     public static Dictionary<string, GameObject> Magatzem;
 
-    public ModeDeu Thopasso;
+    public ModoEdicion Thopasso;
 
     private GameObject[] rapida;
 
@@ -48,8 +46,8 @@ public class GSTRodanxes : MonoBehaviour {
     [SerializeField] private bool[] estaFicat;
 
     void Start() {
-        BotoSelecArross.cap=this;
-        MouSenseUI.cap=this;
+        BotonSeleccionArrastrar.gstUI=this;
+        MoverSinUI.gstUI=this;
         Magatzem = new Dictionary<string, GameObject>();
         rapida = new GameObject[12];
         for (int i=0; i<rapida.Length;i++) {
@@ -206,7 +204,7 @@ public class GSTRodanxes : MonoBehaviour {
         GameObject futil;
         Magatzem.TryGetValue(mares[Mathf.RoundToInt(OnSoc)].transform.GetChild(mares[Mathf.RoundToInt(OnSoc)].transform.childCount-1).name, out futil);
         if (futil==null) {return;}
-        Thopasso.objecte = futil;
+        Thopasso.objetoAEditar = futil;
         afegirRapida();
     }
 
