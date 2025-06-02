@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Octorok : MonoBehaviour, IReiniciable {
+public class Pulpo : MonoBehaviour, IReiniciable {
 
     // Guarda la posición para poder restaurarla (implementación de IReiniciable)
     private Vector3 pos;

@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 191484609}
   - component: {fileID: 191484605}
   m_Layer: 4
-  m_Name: Octorok
+  m_Name: Pulpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,7 +494,7 @@ SpriteRenderer:
   m_SortingLayerID: -889637819
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -856038216008697133, guid: 6dcac948e3abb314d964e90043117131, type: 3}
+  m_Sprite: {fileID: -214839025263659009, guid: c2649e5cd59cd7c44b19ed07cee905e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -563,10 +563,10 @@ MonoBehaviour:
   tiempoMinCambio: 1
   tiempoMaxCambio: 3
   tiempoCambioPico: 0.3
-  abajoPicoCorto: {fileID: 7862256625435699934, guid: 6dcac948e3abb314d964e90043117131, type: 3}
-  abajoPicoLargo: {fileID: -856038216008697133, guid: 6dcac948e3abb314d964e90043117131, type: 3}
-  izquierdaPicoCorto: {fileID: 1484558949937559846, guid: 6dcac948e3abb314d964e90043117131, type: 3}
-  izquierdaPicoLargo: {fileID: 4027839303766080437, guid: 6dcac948e3abb314d964e90043117131, type: 3}
+  abajoPicoCorto: {fileID: 5939775535788942162, guid: c2649e5cd59cd7c44b19ed07cee905e2, type: 3}
+  abajoPicoLargo: {fileID: -214839025263659009, guid: c2649e5cd59cd7c44b19ed07cee905e2, type: 3}
+  izquierdaPicoCorto: {fileID: 456892204984270159, guid: c2649e5cd59cd7c44b19ed07cee905e2, type: 3}
+  izquierdaPicoLargo: {fileID: 5197750537038855881, guid: c2649e5cd59cd7c44b19ed07cee905e2, type: 3}
 --- !u!114 &191484608
 MonoBehaviour:
   m_ObjectHideFlags: 0
